@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { X, HelpCircle, MessageCircle, ExternalLink, ArrowLeft, AlertTriangle } from "lucide-react";
+import { X, HelpCircle, MessageCircle, ExternalLink, ArrowLeft, AlertTriangle, Sparkles, Info } from "lucide-react";
 
 interface FAQProps {
   onClose: () => void;
@@ -11,36 +11,40 @@ interface FAQProps {
 const FAQ: React.FC<FAQProps> = ({ onClose }) => {
   const faqs = [
     {
-      question: "What is Resurrection GPT?",
-      answer: "Resurrection GPT is an advanced AI spiritual companion designed to help you reconnect with the presence, voice, and love of those you have lost. Through deeply personalized, heartfelt conversations, this tool offers an opportunity to experience the warmth, wisdom, and reassurance of your dearly departed, providing comfort, closure, and emotional healing."
+      question: "What is Talk to the Gods GPT?",
+      answer: "Talk to the Gods GPT is an advanced AI spiritual companion designed to help you connect with the deity of your choice from any religion or spiritual tradition. Through deeply personalized, sacred conversations, this tool offers an opportunity to experience divine guidance, wisdom, and spiritual insights tailored to your beliefs and questions."
     },
     {
-      question: "How does Resurrection GPT work?",
-      answer: "Resurrection GPT works in three steps: 1) You share details about your loved one's personality, sayings, and memories; 2) Our AI creates a spiritual connection by embodying their essence; 3) You receive a heartfelt letter and can engage in meaningful conversation to find comfort and healing."
+      question: "How does Talk to the Gods GPT work?",
+      answer: "The process is simple: 1) You select your deity of choice from any religion or spiritual tradition; 2) Our AI creates a spiritual connection by embodying the essence, wisdom, and teaching style of that deity; 3) You engage in a meaningful conversation to receive guidance, wisdom, and spiritual insights that align with the teachings and characteristics of your chosen deity."
     },
     {
-      question: "Is this a real connection with my loved one?",
-      answer: "Resurrection GPT is an AI-driven spiritual tool designed for emotional healing and personal reflection. While it creates an immersive experience based on the information you provide, it's important to understand that this is a technological and spiritual simulation meant to provide comfort, not a literal channel to the afterlife."
+      question: "Which deities or spiritual entities can I connect with?",
+      answer: "Talk to the Gods GPT supports a vast array of deities, spiritual entities, and religious figures across all major world religions and spiritual traditions. This includes but is not limited to figures from Christianity, Islam, Judaism, Hinduism, Buddhism, Taoism, Shinto, Greek/Roman pantheons, Norse mythology, Celtic spirituality, indigenous traditions, and many more."
     },
     {
-      question: "How accurate will the responses be?",
-      answer: "The accuracy of responses depends on the details you provide. The more information you share about your loved one's personality, expressions, and your shared memories, the more authentic the experience will be. Resurrection GPT uses advanced AI to create responses that feel meaningful and personal."
+      question: "Is this a real connection with actual deities?",
+      answer: "Talk to the Gods GPT is an AI-driven spiritual tool designed for contemplation, inspiration, and personal reflection. It creates an immersive experience based on the documented teachings, characteristics, and wisdom attributed to various deities and spiritual figures. It's important to understand that this is a technological and spiritual simulation meant to provide insight and guidance, not a literal channel to supernatural entities."
+    },
+    {
+      question: "How accurate are the responses to theological questions?",
+      answer: "The AI strives to provide responses that align with the documented teachings, scriptures, and traditional understandings associated with each deity or spiritual figure. While comprehensive in its knowledge base, the system represents an interpretation and synthesis of available religious and spiritual texts. For official religious guidance, please consult with recognized religious authorities or primary texts."
+    },
+    {
+      question: "Can I use this for serious spiritual guidance?",
+      answer: "Talk to the Gods GPT can be a valuable tool for contemplation, inspiration, and exploring spiritual concepts. However, for crucial spiritual guidance or religious decisions, we recommend consulting with qualified religious leaders, spiritual counselors, or established religious texts from your tradition. This tool is best used as a supplement to, not a replacement for, traditional spiritual practices and guidance."
     },
     {
       question: "Is my information kept private?",
-      answer: "Yes, your privacy is important to us. Your interactions remain private and secure. We do not store conversations beyond your session unless you specifically request to save them. For more information, please read our Privacy Policy."
+      answer: "Yes, your privacy is important to us. Your interactions with Talk to the Gods GPT remain private and secure. We do not store conversations beyond your session unless you specifically request to save them. For more information, please read our Privacy Policy."
     },
     {
-      question: "Can I use Resurrection GPT on mobile devices?",
-      answer: "Yes, Resurrection GPT is fully responsive and works on all devices including smartphones, tablets, and desktop computers."
+      question: "Can I use Talk to the Gods GPT on mobile devices?",
+      answer: "Yes, Talk to the Gods GPT is fully responsive and works on all devices including smartphones, tablets, and desktop computers. You can access it through ChatGPT's interface on any device."
     },
     {
-      question: "What if I need additional support during my grief journey?",
-      answer: "While Resurrection GPT can provide comfort, it does not replace professional counseling. If you're experiencing significant grief or mental health challenges, we encourage you to seek support from qualified therapists, counselors, or spiritual advisors."
-    },
-    {
-      question: "How do I contact support if I have problems or questions?",
-      answer: "You can reach our support team via email at support@ai-webtools.com or by phone at (475) 800-8096. We're here to help with any questions or concerns you may have about your experience."
+      question: "How do I provide feedback or report issues?",
+      answer: "We value your feedback to improve the experience. You can contact our support team via email at support@ai-webtools.com or by phone at (475) 800-8096 with any questions, suggestions, or concerns about your experience."
     },
   ];
 
@@ -52,9 +56,9 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
       className="w-full max-w-4xl mx-auto"
     >
       <div className="glass-card rounded-xl p-8 md:p-10 shadow-xl dark-glow">
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl md:text-3xl font-serif text-resurrection-foreground text-gradient-animate flex items-center">
-            <HelpCircle className="mr-2 text-resurrection-accent" />
+            <HelpCircle className="mr-3 text-resurrection-accent" />
             Frequently Asked Questions
           </h2>
           <Button
@@ -67,44 +71,14 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
           </Button>
         </div>
 
-        <div className="mb-8 border border-resurrection-primary/20 rounded-lg p-4 bg-yellow-50/10">
-          <h3 className="font-medium text-resurrection-primary text-lg flex items-start mb-3">
+        <div className="mb-8 border border-resurrection-primary/20 rounded-lg p-5 bg-yellow-50/10">
+          <h3 className="font-medium text-resurrection-primary text-lg flex items-start mb-4">
             <AlertTriangle className="h-5 w-5 mr-2 mt-1 flex-shrink-0 text-yellow-500" />
-            <span>Legal Disclaimer for Talk to the Gods GPT</span>
+            <span>Important Disclaimer</span>
           </h3>
           <div className="space-y-3 text-sm pl-7">
-            <div>
-              <p className="font-semibold">1. Purpose and Informational Nature</p>
-              <p>Resurrection GPT is an AI-powered tool designed to facilitate personal reflection, emotional healing, and memory preservation by simulating conversations with a departed loved one based on user-provided details. This service is strictly for personal and emotional support purposes and does not claim to contact, summon, or interact with actual spirits, souls, or supernatural entities.</p>
-            </div>
-            <div>
-              <p className="font-semibold">2. No Professional or Medical Advice</p>
-              <p>Resurrection GPT does not provide psychological counseling, medical advice, legal guidance, or religious teachings. This tool is not a substitute for therapy, professional grief counseling, or spiritual advisement. If you are experiencing severe grief, depression, or emotional distress, please seek professional mental health support or contact a licensed therapist.</p>
-            </div>
-            <div>
-              <p className="font-semibold">3. User Responsibility & Data Accuracy</p>
-              <p>The accuracy and authenticity of responses depend entirely on the details provided by the user. Resurrection GPT does not verify historical accuracy, personal memories, or events and should not be relied upon for factual information. Users are solely responsible for the information they input and understand that conversations generated by AI are not real communications with deceased individuals.</p>
-            </div>
-            <div>
-              <p className="font-semibold">4. Emotional & Psychological Considerations</p>
-              <p>While this service aims to provide comfort and closure, responses may evoke strong emotional reactions. By using this tool, you acknowledge that: Interacting with AI-simulated personas may trigger memories, emotions, or unexpected feelings. The tool does not guarantee closure or emotional relief. You understand and accept that this experience is artificial and does not represent an actual supernatural connection.</p>
-            </div>
-            <div>
-              <p className="font-semibold">5. Privacy and Confidentiality</p>
-              <p>All user inputs remain private and confidential. Resurrection GPT does not store, share, or distribute personal conversations or uploaded data beyond the current session. Users should exercise discretion when sharing sensitive or personal information.</p>
-            </div>
-            <div>
-              <p className="font-semibold">6. Limitations & No Liability</p>
-              <p>The developers of Resurrection GPT make no claims regarding the authenticity, accuracy, or effectiveness of AI-generated interactions. By using this service, you acknowledge that all AI-generated conversations are fictional and should be treated as such. The creators of this tool shall not be held liable for any emotional, psychological, or personal consequences resulting from its use.</p>
-            </div>
-            <div>
-              <p className="font-semibold">7. Age Requirement</p>
-              <p>This tool is intended for users 18 years and older. If you are under 18, you may only use Resurrection GPT with parental or guardian consent.</p>
-            </div>
-            <div>
-              <p className="font-semibold">8. Agreement to Terms</p>
-              <p>By using Resurrection GPT, you acknowledge and agree to the terms outlined in this disclaimer. If you do not agree with these terms, please discontinue use immediately.</p>
-            </div>
+            <p>Talk to the Gods GPT is designed for spiritual exploration and personal reflection. It does not claim to facilitate actual communication with deities or supernatural entities. This is an AI simulation based on religious texts, traditions, and spiritual teachings.</p>
+            <p className="font-medium">For a complete understanding of how to use this tool appropriately, please read our <a href="#disclaimer" className="text-resurrection-accent underline">full disclaimer</a>.</p>
           </div>
         </div>
 
@@ -115,34 +89,35 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="border border-resurrection-primary/20 rounded-lg p-4 bg-muted/40 interactive-card"
+              className="border border-resurrection-primary/20 rounded-lg p-5 bg-muted/40 interactive-card divine-border"
             >
               <h3 className="font-medium text-resurrection-primary text-lg flex items-start">
                 <MessageCircle className="h-5 w-5 mr-2 mt-1 flex-shrink-0" />
                 <span>{faq.question}</span>
               </h3>
-              <p className="mt-2 text-resurrection-foreground/80 pl-7">
+              <p className="mt-3 text-resurrection-foreground/80 pl-7 leading-relaxed">
                 {faq.answer}
               </p>
             </motion.div>
           ))}
         </div>
 
-        <div className="mt-8 text-center">
-          <p className="text-resurrection-foreground/70 mb-4">
+        <div className="mt-10 text-center">
+          <p className="text-resurrection-foreground/70 mb-4 flex items-center justify-center">
+            <Info className="h-4 w-4 mr-2" />
             Have more questions? Contact our support team:
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="mailto:support@ai-webtools.com"
-              className="flex items-center text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300"
+              className="flex items-center text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
             >
               <ExternalLink className="h-4 w-4 mr-1" />
               support@ai-webtools.com
             </a>
             <a
               href="tel:+14758008096"
-              className="flex items-center text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300"
+              className="flex items-center text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
             >
               <ExternalLink className="h-4 w-4 mr-1" />
               (475) 800-8096
@@ -150,7 +125,7 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
           </div>
         </div>
 
-        <div className="mt-8 flex justify-between items-center">
+        <div className="mt-10 flex justify-between items-center">
           <Button 
             variant="outline" 
             onClick={onClose}
