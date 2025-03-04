@@ -1,8 +1,9 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { HelpCircle, ExternalLink, Sparkles } from "lucide-react";
+import { HelpCircle, Sparkles, ExternalLink, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 interface CTAButtonsProps {
   handleBegin: () => void;
@@ -23,12 +24,18 @@ const CTAButtons: React.FC<CTAButtonsProps> = ({ handleBegin }) => {
         className="flex-1"
       >
         <Button 
-          className="bg-resurrection-primary hover:bg-resurrection-secondary text-white transition-all py-7 px-8 rounded-md text-lg btn-glow animate-glow w-full relative overflow-hidden"
+          className={cn(
+            "bg-gradient-to-r from-resurrection-primary to-divine-purple text-white w-full",
+            "transition-all py-6 sm:py-7 px-6 sm:px-8 rounded-xl shadow-lg",
+            "hover:shadow-resurrection-primary/40 hover:from-divine-purple hover:to-resurrection-secondary",
+            "border border-white/10 backdrop-blur-sm group relative overflow-hidden"
+          )}
         >
-          <span className="flex items-center justify-center">
-            <Sparkles className="h-5 w-5 mr-2 text-white/90 animate-pulse-slow" />
-            Begin Your Divine Connection
-            <ExternalLink className="ml-2 h-5 w-5" />
+          <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span className="flex items-center justify-center relative z-10">
+            <Sparkles className="h-5 w-5 mr-2 text-white/90 group-hover:text-white animate-pulse-slow" />
+            <span className="font-serif tracking-wide text-lg">Begin Your Divine Connection</span>
+            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
           </span>
         </Button>
       </a>
@@ -36,10 +43,16 @@ const CTAButtons: React.FC<CTAButtonsProps> = ({ handleBegin }) => {
       <Button
         variant="outline"
         onClick={() => window.location.hash = '#faq'}
-        className="border-resurrection-primary/40 text-resurrection-foreground hover:bg-resurrection-primary/20 py-7 px-8 rounded-md text-lg flex-1"
+        className={cn(
+          "border-resurrection-primary/30 text-resurrection-foreground flex-1",
+          "bg-resurrection-primary/5 hover:bg-resurrection-primary/15",
+          "py-6 sm:py-7 px-6 sm:px-8 rounded-xl shadow-md",
+          "backdrop-blur-sm hover:shadow-resurrection-primary/20",
+          "group transition-all duration-300"
+        )}
       >
-        <HelpCircle className="mr-2" />
-        Have Questions? See FAQ
+        <HelpCircle className="mr-2 group-hover:text-resurrection-primary transition-colors duration-300" />
+        <span className="font-serif tracking-wide text-lg">Have Questions? See FAQ</span>
       </Button>
     </motion.div>
   );
