@@ -63,12 +63,18 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				resurrection: {
-					primary: '#7B5CF6',
-					secondary: '#6D28D9',
+					primary: '#9b87f5',
+					secondary: '#8B5CF6',
 					accent: '#EC4899',
 					muted: '#1E293B',
 					background: '#0F172A',
 					foreground: '#F8FAFC',
+				},
+				divine: {
+					purple: '#9b87f5',
+					'purple-dark': '#7E69AB',
+					'purple-light': '#D6BCFA',
+					accent: '#EC4899',
 				}
 			},
 			borderRadius: {

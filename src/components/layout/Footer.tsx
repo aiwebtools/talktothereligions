@@ -3,6 +3,7 @@ import React from "react";
 import { Mail, Phone, Eye, ExternalLink, FileText, HelpCircle, Server } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const Footer: React.FC = () => {
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -21,23 +22,28 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row md:justify-between items-center mb-8">
           <div className="mb-6 md:mb-0">
             <div className="flex items-center justify-center md:justify-start">
-              <h2 className="text-xl font-serif font-light tracking-wide text-resurrection-foreground flex items-center">
-                <span className="text-gradient-animate mr-2">🔮</span> 
-                Talk to the Gods
-                <Eye className="mx-2 text-resurrection-accent h-5 w-5 animate-pulse-slow" />
-                <span className="text-resurrection-primary font-normal">GPT</span>
+              <h2 className="text-xl font-serif font-light tracking-wider text-resurrection-foreground flex items-center">
+                <span className="text-gradient-animate mr-2 text-lg">🔮</span> 
+                <span className="text-white/90">Talk to the Gods</span>
+                <Eye 
+                  className="mx-2 text-resurrection-accent h-5 w-5 animate-pulse-slow" 
+                  strokeWidth={1.5} 
+                  fill="#9b87f5" 
+                  fillOpacity={0.2}
+                />
+                <span className="bg-gradient-to-r from-[#9b87f5] to-[#8B5CF6] bg-clip-text text-transparent font-normal">GPT</span>
               </h2>
             </div>
-            <div className="flex flex-col items-center md:items-start gap-1">
+            <div className="flex flex-col items-center md:items-start gap-1 mt-1">
               <a 
                 href="https://www.aiwebtools.ai"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 inline-block"
+                className="text-[10px] text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 inline-block tracking-wide"
               >
                 Presented by AiWebTools.Ai
               </a>
-              <p className="text-[10px] text-resurrection-foreground/50">
+              <p className="text-[9px] text-resurrection-foreground/50 tracking-wide leading-relaxed">
                 Connect with the divine through an immersive spiritual experience with the deity of your choice.
               </p>
             </div>
@@ -99,7 +105,10 @@ const Footer: React.FC = () => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground"
+                className={cn(
+                  "bg-[#9b87f5]/10 border-[#9b87f5]/30 hover:bg-[#9b87f5]/20",
+                  "text-resurrection-foreground rounded-full"
+                )}
               >
                 <Server className="mr-2 h-4 w-4" />
                 BEGIN DIVINE CONNECTION

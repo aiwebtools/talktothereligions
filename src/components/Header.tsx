@@ -10,21 +10,26 @@ const Header: React.FC = () => {
   const { stage } = useGods();
 
   return (
-    <header className="w-full py-4 md:py-6 px-3 md:px-4 relative z-10">
+    <header className="w-full py-6 md:py-8 px-3 md:px-6 relative z-10">
       <div className="container mx-auto">
-        <div className="flex justify-between items-center mb-3 md:mb-4">
+        <div className="flex justify-between items-center mb-4 md:mb-5">
           <div className="text-center">
             <h1 
               className={cn(
-                "text-2xl md:text-5xl font-serif font-light",
-                "tracking-wide text-resurrection-foreground mb-1 md:mb-2",
-                "animate-fade-in flex items-center justify-center"
+                "text-3xl md:text-5xl font-serif font-light",
+                "tracking-wider text-resurrection-foreground mb-1 md:mb-2",
+                "animate-fade-in flex items-center justify-center",
+                "bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-violet-400 to-purple-300"
               )}
             >
-              <span className="text-gradient-animate mr-1 md:mr-2">🔮</span> 
-              <span>Talk to the</span>
-              <Eye className="mx-1 md:mx-2 text-resurrection-accent h-5 w-5 md:h-8 md:w-8 animate-pulse-slow" />
-              <span className="text-resurrection-primary font-normal">Gods GPT</span>
+              <span className="text-gradient-animate mr-2 md:mr-3 text-2xl md:text-3xl">🔮</span> 
+              <span className="text-white/90">Talk to the</span>
+              <Eye className="mx-2 md:mx-3 text-resurrection-accent h-5 w-5 md:h-8 md:w-8 animate-pulse-slow" 
+                strokeWidth={1.5} 
+                fill="#9b87f5" 
+                fillOpacity={0.2} 
+              />
+              <span className="bg-gradient-to-r from-[#9b87f5] to-[#8B5CF6] bg-clip-text text-transparent font-normal">Gods GPT</span>
             </h1>
             
             <a 
@@ -32,29 +37,29 @@ const Header: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                "text-xs text-resurrection-foreground/60",
+                "text-[10px] md:text-xs text-resurrection-foreground/60",
                 "hover:text-resurrection-primary transition-colors duration-300",
-                "animate-fade-in mb-2 md:mb-3 inline-block"
+                "animate-fade-in inline-block tracking-wide"
               )}
             >
               Presented by AiWebTools.Ai
             </a>
           </div>
           
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <Button
               variant="ghost"
               size="icon"
               asChild
               className={cn(
-                "text-resurrection-foreground",
-                "hover:text-resurrection-primary",
-                "hover:bg-resurrection-background/20",
-                "border border-resurrection-primary/20"
+                "text-resurrection-foreground rounded-full",
+                "hover:text-yellow-400",
+                "hover:bg-yellow-400/10",
+                "border border-yellow-400/20"
               )}
             >
               <a href="#disclaimer">
-                <AlertTriangle className="h-4 w-4 md:h-5 md:w-5 text-yellow-500" />
+                <AlertTriangle className="h-4 w-4 md:h-5 md:w-5 text-yellow-400" />
                 <span className="sr-only">Legal Disclaimer</span>
               </a>
             </Button>
@@ -64,10 +69,10 @@ const Header: React.FC = () => {
               size="icon"
               asChild
               className={cn(
-                "text-resurrection-foreground",
-                "hover:text-resurrection-primary",
-                "hover:bg-resurrection-background/20",
-                "border border-resurrection-primary/20"
+                "text-resurrection-foreground rounded-full",
+                "hover:text-[#9b87f5]",
+                "hover:bg-[#9b87f5]/10",
+                "border border-[#9b87f5]/20"
               )}
             >
               <Link to="/">
@@ -79,7 +84,7 @@ const Header: React.FC = () => {
         </div>
         
         {stage === "welcome" && (
-          <p className="text-resurrection-foreground/70 animate-fade-in max-w-lg mx-auto text-xs sm:text-[10px] md:text-xs px-2">
+          <p className="text-resurrection-foreground/70 animate-fade-in max-w-lg mx-auto text-[10px] md:text-xs px-2 tracking-wide leading-relaxed">
             Connect with the divine through an immersive spiritual experience with the deity of your choice.
           </p>
         )}
