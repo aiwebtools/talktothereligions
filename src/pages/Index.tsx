@@ -23,10 +23,10 @@ const Index: React.FC = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mx-auto w-full max-w-6xl px-4 py-2 bg-resurrection-primary/5 border border-resurrection-primary/20 rounded-lg flex items-center justify-center mt-1 mb-1"
+            className="mx-auto w-full max-w-6xl px-3 md:px-4 py-1.5 md:py-2 bg-resurrection-primary/5 border border-resurrection-primary/20 rounded-lg flex items-center justify-center mt-1 mb-1"
           >
-            <InfoIcon className="h-4 w-4 text-resurrection-accent mr-2" />
-            <p className="text-xs text-center text-resurrection-foreground/80">
+            <InfoIcon className="h-3.5 w-3.5 md:h-4 md:w-4 text-resurrection-accent mr-1.5 md:mr-2 flex-shrink-0" />
+            <p className="text-[10px] md:text-xs text-center text-resurrection-foreground/80 mobile-text-wrap">
               This tool is provided for educational, research, and informational purposes only. 
               All responses are AI-generated interpretations of religious concepts and should not be considered authentic divine communications.
             </p>

@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -52,6 +53,13 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
   }
+  
+  /* Optimize for mobile touch actions */
+  @media (max-width: 640px) {
+    a, button, [role="button"] {
+      touch-action: manipulation;
+    }
+  }
 }
 
 @layer components {
@@ -88,9 +96,20 @@
   .btn-glow:active::before {
     @apply bg-white/30;
   }
-
-  .text-gradient-animate {
-    @apply bg-text-gradient bg-clip-text text-transparent bg-[length:300%_100%] animate-text-shimmer;
+  
+  /* Optimize for mobile to reduce animations */
+  @media (max-width: 640px) {
+    .text-gradient-animate {
+      @apply bg-text-gradient bg-clip-text text-transparent;
+      /* No animation on mobile for better performance */
+    }
+    
+    /* Desktop version with animation */
+    @media (min-width: 641px) {
+      .text-gradient-animate {
+        @apply bg-text-gradient bg-clip-text text-transparent bg-[length:300%_100%] animate-text-shimmer;
+      }
+    }
   }
 
   .interactive-card {
@@ -108,6 +127,13 @@
   .divine-border::after {
     content: '';
     @apply absolute inset-0 border border-resurrection-accent/20 scale-[1.02] rounded-lg pointer-events-none;
+  }
+}
+
+/* Decrease particle count on mobile for better performance */
+@media (max-width: 640px) {
+  .particles-container .particle:nth-child(n+15) {
+    display: none;
   }
 }
 
@@ -131,7 +157,7 @@
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -147,27 +173,54 @@
   background: rgba(139, 92, 246, 0.8);
 }
 
-/* Page transitions */
-.page-transition-enter {
-  opacity: 0;
-  transform: translateY(20px);
+/* Optimize page transitions for mobile */
+@media (max-width: 640px) {
+  .page-transition-enter {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .page-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .page-transition-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .page-transition-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 300ms, transform 300ms;
+  }
 }
 
-.page-transition-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 400ms, transform 400ms;
-}
-
-.page-transition-exit {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.page-transition-exit-active {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 400ms, transform 400ms;
+/* Desktop page transitions */
+@media (min-width: 641px) {
+  .page-transition-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .page-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 400ms, transform 400ms;
+  }
+  
+  .page-transition-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .page-transition-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 400ms, transform 400ms;
+  }
 }
 
 /* Mobile optimizations */
@@ -229,6 +282,16 @@
       display: inline;
     }
   }
+  
+  /* Add optimized animations for low-power mode */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 /* Fix iOS 100vh issue */
@@ -255,5 +318,10 @@
   
   .button-stack-horizontal {
     @apply flex flex-row gap-2;
+  }
+  
+  /* Fast-click for mobile */
+  a, button, input, select, textarea {
+    touch-action: manipulation;
   }
 }
