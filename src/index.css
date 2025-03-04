@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 250 95% 65%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 250 95% 75%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 320 95% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 250 95% 65%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-resurrection-background text-resurrection-foreground font-sans antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/10 shadow-lg relative overflow-hidden;
+  }
+  
+  .glass-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent pointer-events-none;
+  }
+
+  .letter-paper {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-md;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 1.5rem 1.5rem;
+  }
+
+  .btn-glow {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .btn-glow::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 bg-white/20 transition-opacity duration-300;
+  }
+
+  .btn-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  .btn-glow:active::before {
+    @apply bg-white/30;
+  }
+
+  .text-gradient-animate {
+    @apply bg-text-gradient bg-clip-text text-transparent bg-[length:300%_100%] animate-text-shimmer;
+  }
+
+  .interactive-card {
+    @apply transition-transform duration-300 hover:scale-105 hover:shadow-xl;
+  }
+
+  .dark-glow {
+    @apply shadow-[0_0_20px_rgba(139,92,246,0.4)];
+  }
+  
+  .divine-border {
+    @apply border border-resurrection-primary/30 relative;
+  }
+  
+  .divine-border::after {
+    content: '';
+    @apply absolute inset-0 border border-resurrection-accent/20 scale-[1.02] rounded-lg pointer-events-none;
+  }
+}
+
+.particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(40, 40, 40, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.8);
+}
+
+/* Page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 400ms, transform 400ms;
+}
+
+/* Mobile optimizations */
+@layer utilities {
+  @media (max-width: 640px) {
+    .mobile-glass-card {
+      @apply p-3 md:p-6;
+    }
+    
+    .mobile-letter-paper {
+      @apply p-3 md:p-6;
+    }
+    
+    .mobile-interactive-card {
+      @apply transition-transform duration-300 hover:scale-102 active:scale-98;
+    }
+    
+    .mobile-text {
+      @apply text-sm md:text-base;
+    }
+    
+    .mobile-heading {
+      @apply text-lg md:text-2xl;
+    }
+    
+    .mobile-btn {
+      @apply py-2 px-3 md:py-3 md:px-4 text-xs md:text-sm;
+    }
+    
+    .touch-friendly {
+      @apply min-h-10 min-w-10;
+    }
+    
+    .touch-target {
+      @apply min-h-[44px] min-w-[44px];
+    }
+    
+    .mobile-button-spacing > * {
+      @apply my-1.5;
+    }
+    
+    .mobile-text-wrap {
+      @apply break-words hyphens-auto;
+    }
+  }
+
+  .xs\:hidden {
+    @media (min-width: 480px) {
+      display: none;
+    }
+  }
+  
+  .hidden.xs\:inline {
+    display: none;
+  }
+  
+  .xs\:inline {
+    @media (min-width: 480px) {
+      display: inline;
+    }
+  }
+}
+
+/* Fix iOS 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+  
+  .safe-h-screen {
+    height: 100vh; /* fallback */
+    height: -webkit-fill-available;
+  }
+}
+
+/* Add tap highlight transparency for mobile */
+@media (max-width: 640px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .button-stack {
+    @apply flex flex-col gap-2;
+  }
+  
+  .button-stack-horizontal {
+    @apply flex flex-row gap-2;
+  }
+}

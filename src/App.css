@@ -62,39 +62,3 @@
 .read-the-docs {
   color: #888;
 }
-
-/* Mobile optimization */
-@media (max-width: 480px) {
-  input, select, textarea, button {
-    font-size: 16px !important; /* Prevents iOS zoom on focus */
-  }
-  
-  .touch-action-manipulation {
-    touch-action: manipulation;
-  }
-}
-
-/* Improve tap targets on mobile */
-@media (max-width: 640px) {
-  button, a, [role="button"] {
-    min-height: 44px;
-    min-width: 44px;
-  }
-}
-
-/* PWA display optimizations */
-@media (display-mode: standalone) {
-  body {
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
-  }
-}
-
-/* Optimize transitions for mobile */
-@media (max-width: 640px) {
-  .mobile-optimized-transition {
-    transition-duration: 150ms !important;
-  }
-}
