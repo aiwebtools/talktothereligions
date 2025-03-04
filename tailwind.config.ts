@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -87,6 +88,7 @@ export default {
 			},
 			scale: {
 				'102': '1.02',
+				'98': '0.98',  // Adding the missing scale-98 value
 			},
 			keyframes: {
 				'accordion-down': {
