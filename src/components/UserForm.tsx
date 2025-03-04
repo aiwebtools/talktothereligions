@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { useResurrection } from "@/context/ResurrectionContext";
+import { useGods } from "@/context/GodsContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
 const UserForm: React.FC = () => {
-  const { setStage, userInfo, setUserInfo } = useResurrection();
+  const { setStage, userInfo, setUserInfo } = useGods();
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -38,12 +38,12 @@ const UserForm: React.FC = () => {
         className="glass-card rounded-xl p-6 md:p-8 animate-fade-in shadow-xl dark-glow"
       >
         <h2 className="text-2xl md:text-3xl font-serif text-center mb-3 text-gradient-animate">
-          Welcome to your journey
+          Begin your divine journey
         </h2>
         
         <p className="mb-6 text-center text-resurrection-foreground/80 text-sm">
-          Before we begin your spiritual connection, we'll need to gather some information. 
-          This helps create an authentic and meaningful experience.
+          Before establishing a connection with your chosen deity, we need some basic information. 
+          This helps create an authentic and meaningful divine experience.
         </p>
         
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -64,8 +64,8 @@ const UserForm: React.FC = () => {
           </div>
           
           <div className="pt-2 text-center text-resurrection-foreground/70 text-sm">
-            <p>Next, you'll answer questions about your departed loved one.</p>
-            <p className="mt-1 italic">We'll gather details about their personality, memories you shared, and what made them special.</p>
+            <p>Next, you'll select your religion and the deity you wish to connect with.</p>
+            <p className="mt-1 italic">We'll gather details about your spiritual beliefs to ensure an authentic divine connection.</p>
           </div>
           
           <Button 
@@ -108,7 +108,7 @@ const UserForm: React.FC = () => {
       </motion.div>
       
       <p className="text-center text-resurrection-foreground/60 mt-4 text-xs px-4">
-        Your experience is private and secure. We handle your memories with the utmost respect.
+        Your experience is private and sacred. We handle your spiritual details with the utmost respect.
       </p>
     </div>
   );

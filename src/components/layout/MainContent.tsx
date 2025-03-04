@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import { useResurrection } from "@/context/ResurrectionContext";
+import { useGods } from "@/context/GodsContext";
 import { motion, AnimatePresence } from "framer-motion";
 import Welcome from "@/components/Welcome";
 import UserForm from "@/components/UserForm";
@@ -12,7 +12,7 @@ import LegalDisclaimer from "@/components/LegalDisclaimer";
 import Footer from "./Footer";
 
 const MainContent: React.FC = () => {
-  const { stage } = useResurrection();
+  const { stage } = useGods();
   const [showFAQ, setShowFAQ] = useState(false);
   const [showDisclaimer, setShowDisclaimer] = useState(false);
 

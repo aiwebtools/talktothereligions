@@ -14,7 +14,7 @@ const CTAButtons: React.FC<CTAButtonsProps> = ({ handleBegin }) => {
         onClick={handleBegin}
         className="bg-resurrection-primary hover:bg-resurrection-secondary text-white transition-all py-6 px-8 rounded-md text-lg btn-glow animate-glow"
       >
-        Begin Your Spiritual Connection
+        Begin Your Divine Connection
         <ArrowRight className="ml-2" />
       </Button>
       

@@ -39,10 +39,10 @@ const WelcomeFooter: React.FC = () => {
         </div>
       </div>
       
-      <div className="mb-6 flex flex-col gap-3">
+      <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-y-3 justify-center mb-6 text-xs sm:text-sm">
         <a 
           href="#disclaimer"
-          className="flex items-center justify-center gap-1.5 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group text-xs sm:text-sm"
+          className="flex items-center justify-center gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
         >
           <FileText size={12} className="group-hover:animate-pulse-slow" />
           <span className="group-hover:underline">Full Disclaimer</span>
@@ -51,7 +51,7 @@ const WelcomeFooter: React.FC = () => {
           href="https://openai.com/policies/privacy-policy/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1.5 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group text-xs sm:text-sm"
+          className="flex items-center justify-center gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
         >
           <ExternalLink size={12} className="group-hover:rotate-45 transition-transform duration-300" />
           <span className="group-hover:underline">Privacy Policy</span>
@@ -60,14 +60,14 @@ const WelcomeFooter: React.FC = () => {
           href="https://aiwebtools.ai/terms-of-services" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1.5 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group text-xs sm:text-sm"
+          className="flex items-center justify-center gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
         >
           <ExternalLink size={12} className="group-hover:rotate-45 transition-transform duration-300" />
           <span className="group-hover:underline">Terms of Service</span>
         </a>
         <a 
           href="#faq"
-          className="flex items-center justify-center gap-1.5 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group text-xs sm:text-sm"
+          className="flex items-center justify-center gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
         >
           <HelpCircle size={12} className="group-hover:animate-pulse-slow" />
           <span className="group-hover:underline">FAQ</span>

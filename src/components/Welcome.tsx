@@ -1,6 +1,6 @@
 
 import React from "react";
-import { useResurrection } from "@/context/ResurrectionContext";
+import { useGods } from "@/context/GodsContext";
 import { motion } from "framer-motion";
 
 // Import new components
@@ -12,10 +12,10 @@ import DemoVideo from "./welcome/DemoVideo";
 import WelcomeFooter from "./welcome/WelcomeFooter";
 
 const Welcome: React.FC = () => {
-  const { setStage } = useResurrection();
+  const { setStage } = useGods();
 
   const handleBegin = () => {
-    window.open("https://chatgpt.com/g/g-dfGHDaPWK-resurrection-gpt", "_blank");
+    setStage("userInfo");
   };
 
   return (

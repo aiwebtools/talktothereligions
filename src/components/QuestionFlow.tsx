@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { useResurrection } from "@/context/ResurrectionContext";
+import { useGods } from "@/context/GodsContext";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
@@ -14,7 +14,7 @@ const QuestionFlow: React.FC = () => {
     updateQuestionAnswer,
     progressQuestionFlow,
     progressToLoading
-  } = useResurrection();
+  } = useGods();
   
   const [currentAnswer, setCurrentAnswer] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -71,13 +71,13 @@ const QuestionFlow: React.FC = () => {
   const getCategoryDescription = (category: string) => {
     switch(category) {
       case "personal":
-        return "About Their Personality";
-      case "relationship":
-        return "About Your Relationship";
-      case "memories":
-        return "About Your Memories";
+        return "About You";
+      case "religion":
+        return "About Your Faith";
+      case "deity":
+        return "About Your Deity";
       case "details":
-        return "About Their Life";
+        return "Spiritual Details";
       default:
         return "";
     }
@@ -114,12 +114,12 @@ const QuestionFlow: React.FC = () => {
                   {currentQuestion.text}
                 </h3>
                 <p className="text-xs text-resurrection-foreground/60 italic">
-                  The more details you share, the more meaningful your spiritual connection will be.
+                  The more details you share, the more meaningful your divine connection will be.
                 </p>
                 <Textarea
                   value={currentAnswer}
                   onChange={(e) => setCurrentAnswer(e.target.value)}
-                  placeholder="Share your thoughts and memories..."
+                  placeholder="Share your spiritual beliefs and questions..."
                   className="bg-white/5 border-resurrection-primary/20 focus:border-resurrection-primary/50 transition-all min-h-[120px] text-resurrection-foreground"
                 />
                 {error && <p className="text-red-500 text-sm">{error}</p>}
@@ -159,7 +159,7 @@ const QuestionFlow: React.FC = () => {
       </div>
       
       <p className="text-center text-resurrection-foreground/60 mt-3 text-xs px-4">
-        Each answer helps create a more authentic connection with your loved one.
+        Each answer helps create a more authentic connection with your chosen deity.
       </p>
     </div>
   );

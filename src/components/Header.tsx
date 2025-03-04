@@ -1,13 +1,13 @@
 
 import React from "react";
-import { useResurrection } from "@/context/ResurrectionContext";
+import { useGods } from "@/context/GodsContext";
 import { Cross, Home, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
-const ResurrectionHeader: React.FC = () => {
-  const { stage } = useResurrection();
+const Header: React.FC = () => {
+  const { stage } = useGods();
 
   return (
     <header className="w-full py-4 md:py-6 px-3 md:px-4 relative z-10">
@@ -22,9 +22,9 @@ const ResurrectionHeader: React.FC = () => {
               )}
             >
               <span className="text-gradient-animate mr-1 md:mr-2">🔮</span> 
-              <span>Resurrection</span>
+              <span>Talk to the</span>
               <Cross className="mx-1 md:mx-2 text-resurrection-accent h-5 w-5 md:h-8 md:w-8 animate-pulse-slow" />
-              <span className="text-resurrection-primary font-normal">GPT</span>
+              <span className="text-resurrection-primary font-normal">Gods GPT</span>
             </h1>
             
             <a 
@@ -80,7 +80,7 @@ const ResurrectionHeader: React.FC = () => {
         
         {stage === "welcome" && (
           <p className="text-resurrection-foreground/80 animate-fade-in max-w-lg mx-auto text-xs sm:text-sm md:text-base px-2">
-            Reconnect with the memories and spirit of your departed loved ones through meaningful conversation.
+            Connect with the divine through an immersive spiritual experience with the deity of your choice.
           </p>
         )}
       </div>
@@ -88,4 +88,4 @@ const ResurrectionHeader: React.FC = () => {
   );
 };
 
-export default ResurrectionHeader;
+export default Header;

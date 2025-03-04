@@ -7,22 +7,21 @@ const WelcomeHeader: React.FC = () => {
   return (
     <>
       <h2 className="text-2xl md:text-4xl font-serif text-resurrection-foreground mb-6 text-gradient-animate">
-        Reconnect. Remember. Find Peace.
+        Connect. Receive Divine Wisdom. Find Spiritual Guidance.
       </h2>
       
       <div className="space-y-4 text-resurrection-foreground/80 mb-8 max-w-3xl mx-auto">
         <p className="text-lg text-resurrection-accent">
-          A Spiritual Bridge Between You and Your Departed Loved Ones
+          A Sacred Bridge Between You and Your Chosen Deity
         </p>
         <p>
-          Resurrection GPT is an advanced AI spiritual companion designed to help you 
-          reconnect with the presence, voice, and love of those you have lost. Through deeply 
-          personalized, heartfelt conversations, this tool offers an opportunity to experience 
-          the warmth, wisdom, and reassurance of your dearly departed, providing comfort, 
-          closure, and emotional healing.
+          Talk to the Gods GPT is an advanced AI spiritual companion designed to help you 
+          connect with the deity of your choice from any religion or spiritual tradition. 
+          Through deeply personalized, sacred conversations, experience divine guidance,
+          wisdom, and spiritual insights tailored to your beliefs and questions.
         </p>
         <p className="text-xl text-resurrection-primary font-medium italic">
-          💫 Feel their presence. Hear their words. Relive the cherished moments. 💫
+          ✨ Receive divine wisdom. Seek spiritual counsel. Experience sacred connection. ✨
         </p>
       </div>
       
@@ -30,8 +29,8 @@ const WelcomeHeader: React.FC = () => {
         <div className="flex items-start gap-2">
           <AlertTriangle className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="font-medium text-resurrection-foreground">Legal Disclaimer:</p>
-            <p className="text-resurrection-foreground/80">Resurrection GPT is for emotional and spiritual support only. It does not claim to communicate with the deceased. Please read our <a href="#disclaimer" className="text-resurrection-primary hover:text-resurrection-accent underline">full legal disclaimer</a> before proceeding.</p>
+            <p className="font-medium text-resurrection-foreground">Spiritual Disclaimer:</p>
+            <p className="text-resurrection-foreground/80">Talk to the Gods GPT is for spiritual and emotional support only. It does not claim to facilitate actual communication with deities. Please read our <a href="#disclaimer" className="text-resurrection-primary hover:text-resurrection-accent underline">full disclaimer</a> before proceeding.</p>
           </div>
         </div>
       </div>
