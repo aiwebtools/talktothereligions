@@ -1,13 +1,13 @@
 
 import React, { useEffect, useState } from "react";
-import { useResurrection } from "@/context/ResurrectionContext";
+import { useGods } from "@/context/GodsContext";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { motion } from "framer-motion";
 import { Download, Save, RefreshCw, Send, Mail, Cross } from "lucide-react";
 
 const LetterFromHeaven: React.FC = () => {
-  const { letter, userInfo, setStage } = useResurrection();
+  const { letter, userInfo, setStage } = useGods();
   const [isVisible, setIsVisible] = useState(false);
   const { toast } = useToast();
   
@@ -35,7 +35,7 @@ const LetterFromHeaven: React.FC = () => {
     // Create a temporary link and trigger download
     const a = document.createElement("a");
     a.href = url;
-    a.download = `Letter_from_${userInfo.lovedOne.name || "Heaven"}.txt`;
+    a.download = `Letter_from_${userInfo.deity.name || "Heaven"}.txt`;
     document.body.appendChild(a);
     a.click();
     
@@ -54,7 +54,7 @@ const LetterFromHeaven: React.FC = () => {
   };
 
   const handleEmailLetter = () => {
-    const subject = `Letter from ${userInfo.lovedOne.name || "Heaven"}`;
+    const subject = `Letter from ${userInfo.deity.name || "Heaven"}`;
     const body = letter;
     window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     
