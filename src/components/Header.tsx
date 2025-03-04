@@ -45,7 +45,7 @@ const Header: React.FC = () => {
               Presented by AiWebTools.Ai
             </a>
             
-            <p className="text-[6px] md:text-[10px] text-resurrection-foreground/50 tracking-wide leading-tight mt-0.5">
+            <p className="text-[10px] md:text-[12px] text-resurrection-foreground/70 tracking-wide leading-tight mt-1 md:mt-2">
               Connect with the divine through an immersive spiritual experience with the deity of your choice.
             </p>
           </div>

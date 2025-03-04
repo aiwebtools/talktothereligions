@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Mail, Phone, Eye, ExternalLink, FileText, HelpCircle, Server } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -43,7 +42,7 @@ const Footer: React.FC = () => {
               >
                 Presented by AiWebTools.Ai
               </a>
-              <p className="text-[6px] md:text-[9px] text-resurrection-foreground/50 tracking-wide leading-relaxed">
+              <p className="text-[10px] md:text-[12px] text-resurrection-foreground/70 tracking-wide leading-relaxed">
                 Connect with the divine through an immersive spiritual experience with the deity of your choice.
               </p>
             </div>
