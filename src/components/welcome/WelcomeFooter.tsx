@@ -16,78 +16,78 @@ const WelcomeFooter: React.FC = () => {
   };
 
   return (
-    <div className="mt-8 pt-6 border-t border-white/10 text-center">
-      <div className="mb-6">
-        <div className="flex items-center justify-center mb-3">
-          <h3 className="text-lg font-serif font-light tracking-wider text-resurrection-foreground flex items-center">
-            <span className="text-gradient-animate mr-1 text-base">🔮</span> 
-            <span className="text-white/90">Talk to the Gods</span>
+    <div className="mt-8 pt-5 border-t border-white/10 text-center">
+      <div className="mb-5">
+        <div className="flex items-center justify-center mb-2">
+          <h3 className="text-base md:text-lg font-serif font-light tracking-wider text-resurrection-foreground flex items-center">
+            <span className="text-gradient-animate mr-1 text-sm md:text-base">🔮</span> 
+            <span className="text-white/90 text-xs md:text-sm">Talk to the Gods</span>
             <Eye 
-              className="mx-1 text-resurrection-accent h-4 w-4 animate-pulse-slow" 
+              className="mx-1 text-resurrection-accent h-3 w-3 md:h-4 md:w-4 animate-pulse-slow" 
               strokeWidth={1.5} 
               fill="#9b87f5" 
               fillOpacity={0.2}
             />
-            <span className="bg-gradient-to-r from-[#9b87f5] to-[#8B5CF6] bg-clip-text text-transparent font-normal">GPT</span>
+            <span className="bg-gradient-to-r from-[#9b87f5] to-[#8B5CF6] bg-clip-text text-transparent font-normal text-xs md:text-sm">GPT</span>
           </h3>
         </div>
-        <p className="text-[9px] text-resurrection-foreground/50 mb-4 tracking-wide leading-relaxed">
+        <p className="text-[6px] md:text-[9px] text-resurrection-foreground/50 mb-3 tracking-wide leading-relaxed">
           Connect with the divine through an immersive spiritual experience with the deity of your choice.
         </p>
-        <p className="mb-3 text-resurrection-foreground/70 text-sm">
+        <p className="mb-2 text-resurrection-foreground/70 text-xs md:text-sm">
           Contact Us
         </p>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-2 md:gap-3 text-[9px] md:text-sm">
           <a 
             href="mailto:support@ai-webtools.com" 
             onClick={handleEmailClick}
-            className="flex items-center justify-center gap-1.5 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group text-sm"
+            className="flex items-center justify-center gap-1 md:gap-1.5 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
           >
-            <Mail size={14} className="group-hover:translate-y-[-2px] transition-transform duration-300" />
+            <Mail size={12} className="group-hover:translate-y-[-2px] transition-transform duration-300" />
             <span className="group-hover:underline">support@ai-webtools.com</span>
           </a>
           <a 
             href="tel:+14758008096" 
             onClick={handlePhoneClick}
-            className="flex items-center justify-center gap-1.5 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group text-sm"
+            className="flex items-center justify-center gap-1 md:gap-1.5 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
           >
-            <Phone size={14} className="group-hover:rotate-12 transition-transform duration-300" />
+            <Phone size={12} className="group-hover:rotate-12 transition-transform duration-300" />
             <span className="group-hover:underline">(475) 800-8096</span>
           </a>
         </div>
       </div>
       
-      <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-y-3 justify-center mb-6 text-xs sm:text-sm">
+      <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-y-2 justify-center mb-5 text-[9px] sm:text-xs">
         <a 
           href="#disclaimer"
-          className="flex items-center justify-center gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
+          className="flex items-center justify-center gap-1 md:gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
         >
-          <FileText size={12} className="group-hover:animate-pulse-slow" />
+          <FileText size={10} className="group-hover:animate-pulse-slow" />
           <span className="group-hover:underline">Full Disclaimer</span>
         </a>
         <a 
           href="https://openai.com/policies/privacy-policy/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
+          className="flex items-center justify-center gap-1 md:gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
         >
-          <ExternalLink size={12} className="group-hover:rotate-45 transition-transform duration-300" />
+          <ExternalLink size={10} className="group-hover:rotate-45 transition-transform duration-300" />
           <span className="group-hover:underline">Privacy Policy</span>
         </a>
         <a 
           href="https://aiwebtools.ai/terms-of-services" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
+          className="flex items-center justify-center gap-1 md:gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
         >
-          <ExternalLink size={12} className="group-hover:rotate-45 transition-transform duration-300" />
+          <ExternalLink size={10} className="group-hover:rotate-45 transition-transform duration-300" />
           <span className="group-hover:underline">Terms of Service</span>
         </a>
         <a 
           href="#faq"
-          className="flex items-center justify-center gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
+          className="flex items-center justify-center gap-1 md:gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
         >
-          <HelpCircle size={12} className="group-hover:animate-pulse-slow" />
+          <HelpCircle size={10} className="group-hover:animate-pulse-slow" />
           <span className="group-hover:underline">FAQ</span>
         </a>
       </div>
@@ -101,16 +101,17 @@ const WelcomeFooter: React.FC = () => {
           <Button 
             className={cn(
               "bg-[#9b87f5] hover:bg-[#8B5CF6] text-white",
-              "rounded-full transition-all duration-300"
+              "rounded-full transition-all duration-300",
+              "text-xs md:text-sm px-4 py-1.5 h-8 md:h-10"
             )}
           >
             Begin Your Divine Connection
-            <ExternalLink className="ml-2 h-4 w-4" />
+            <ExternalLink className="ml-1.5 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
           </Button>
         </a>
       </div>
       
-      <p className="text-xs text-resurrection-foreground/60 mt-4">
+      <p className="text-[8px] md:text-xs text-resurrection-foreground/60 mt-3">
         © 2025 AI WEB TOOLS LLC. All rights reserved.
       </p>
     </div>
