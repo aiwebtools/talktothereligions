@@ -1,0 +1,35 @@
+
+/* Extra small screen utilities */
+.xs\:hidden {
+  @media (min-width: 480px) {
+    display: none;
+  }
+}
+
+.hidden.xs\:inline {
+  display: none;
+}
+
+.xs\:inline {
+  @media (min-width: 480px) {
+    display: inline;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(40, 40, 40, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.8);
+}

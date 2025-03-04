@@ -1,0 +1,75 @@
+
+/* Desktop version with animation */
+@media (min-width: 641px) {
+  .text-gradient-animate {
+    @apply bg-text-gradient bg-clip-text text-transparent bg-[length:300%_100%] animate-text-shimmer;
+  }
+}
+
+/* Mobile version without animation */
+@media (max-width: 640px) {
+  .text-gradient-animate {
+    @apply bg-text-gradient bg-clip-text text-transparent;
+    /* No animation on mobile for better performance */
+  }
+}
+
+/* Optimize page transitions for mobile */
+@media (max-width: 640px) {
+  .page-transition-enter {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  
+  .page-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .page-transition-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .page-transition-exit-active {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 300ms, transform 300ms;
+  }
+}
+
+/* Desktop page transitions */
+@media (min-width: 641px) {
+  .page-transition-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .page-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 400ms, transform 400ms;
+  }
+  
+  .page-transition-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .page-transition-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 400ms, transform 400ms;
+  }
+}
+
+/* Add optimized animations for low-power mode */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

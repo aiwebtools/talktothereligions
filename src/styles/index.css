@@ -1,0 +1,18 @@
+
+/* Base styles and Tailwind imports */
+@import './base.css';
+
+/* Component styles */
+@import './components.css';
+
+/* Animation styles */
+@import './animations.css';
+
+/* Particle effects */
+@import './particles.css';
+
+/* Mobile optimizations */
+@import './mobile.css';
+
+/* Responsive utilities */
+@import './responsive.css';

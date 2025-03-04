@@ -1,0 +1,53 @@
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/10 shadow-lg relative overflow-hidden;
+  }
+  
+  .glass-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent pointer-events-none;
+  }
+
+  .letter-paper {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-md;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 1.5rem 1.5rem;
+  }
+
+  .btn-glow {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .btn-glow::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 bg-white/20 transition-opacity duration-300;
+  }
+
+  .btn-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  .btn-glow:active::before {
+    @apply bg-white/30;
+  }
+
+  .interactive-card {
+    @apply transition-transform duration-300 hover:scale-105 hover:shadow-xl;
+  }
+
+  .dark-glow {
+    @apply shadow-[0_0_20px_rgba(139,92,246,0.4)];
+  }
+  
+  .divine-border {
+    @apply border border-resurrection-primary/30 relative;
+  }
+  
+  .divine-border::after {
+    content: '';
+    @apply absolute inset-0 border border-resurrection-accent/20 scale-[1.02] rounded-lg pointer-events-none;
+  }
+}
