@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Mail, Phone, Cross, ExternalLink, FileText, HelpCircle, Server } from "lucide-react";
+import { Mail, Phone, Eye, ExternalLink, FileText, HelpCircle, Server } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -24,18 +24,23 @@ const Footer: React.FC = () => {
               <h2 className="text-xl font-serif font-light tracking-wide text-resurrection-foreground flex items-center">
                 <span className="text-gradient-animate mr-2">🔮</span> 
                 Talk to the Gods
-                <Cross className="mx-2 text-resurrection-accent h-5 w-5 animate-pulse-slow" />
+                <Eye className="mx-2 text-resurrection-accent h-5 w-5 animate-pulse-slow" />
                 <span className="text-resurrection-primary font-normal">GPT</span>
               </h2>
             </div>
-            <a 
-              href="https://www.aiwebtools.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 mt-1 inline-block"
-            >
-              Presented by AiWebTools.Ai
-            </a>
+            <div className="flex flex-col items-center md:items-start gap-1">
+              <a 
+                href="https://www.aiwebtools.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 inline-block"
+              >
+                Presented by AiWebTools.Ai
+              </a>
+              <p className="text-[10px] text-resurrection-foreground/50">
+                Connect with the divine through an immersive spiritual experience with the deity of your choice.
+              </p>
+            </div>
           </div>
           
           <div className="grid grid-cols-2 gap-y-3 gap-x-6 mb-6 md:mb-0">

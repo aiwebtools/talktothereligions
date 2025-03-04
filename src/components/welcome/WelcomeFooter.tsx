@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Mail, Phone, ExternalLink, HelpCircle, FileText } from "lucide-react";
+import { Mail, Phone, ExternalLink, HelpCircle, FileText, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const WelcomeFooter: React.FC = () => {
@@ -17,6 +17,17 @@ const WelcomeFooter: React.FC = () => {
   return (
     <div className="mt-8 pt-6 border-t border-white/10 text-center">
       <div className="mb-6">
+        <div className="flex items-center justify-center mb-3">
+          <h3 className="text-lg font-serif font-light tracking-wide text-resurrection-foreground flex items-center">
+            <span className="text-gradient-animate mr-1">🔮</span> 
+            Talk to the Gods
+            <Eye className="mx-1 text-resurrection-accent h-4 w-4 animate-pulse-slow" />
+            <span className="text-resurrection-primary font-normal">GPT</span>
+          </h3>
+        </div>
+        <p className="text-[10px] text-resurrection-foreground/50 mb-4">
+          Connect with the divine through an immersive spiritual experience with the deity of your choice.
+        </p>
         <p className="mb-3 text-resurrection-foreground/70 text-sm">
           Contact Us
         </p>

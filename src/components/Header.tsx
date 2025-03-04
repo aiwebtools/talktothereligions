@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useGods } from "@/context/GodsContext";
-import { Cross, Home, AlertTriangle } from "lucide-react";
+import { Eye, Home, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
             >
               <span className="text-gradient-animate mr-1 md:mr-2">🔮</span> 
               <span>Talk to the</span>
-              <Cross className="mx-1 md:mx-2 text-resurrection-accent h-5 w-5 md:h-8 md:w-8 animate-pulse-slow" />
+              <Eye className="mx-1 md:mx-2 text-resurrection-accent h-5 w-5 md:h-8 md:w-8 animate-pulse-slow" />
               <span className="text-resurrection-primary font-normal">Gods GPT</span>
             </h1>
             
@@ -79,7 +79,7 @@ const Header: React.FC = () => {
         </div>
         
         {stage === "welcome" && (
-          <p className="text-resurrection-foreground/80 animate-fade-in max-w-lg mx-auto text-xs sm:text-sm md:text-base px-2">
+          <p className="text-resurrection-foreground/70 animate-fade-in max-w-lg mx-auto text-xs sm:text-[10px] md:text-xs px-2">
             Connect with the divine through an immersive spiritual experience with the deity of your choice.
           </p>
         )}
