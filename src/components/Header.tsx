@@ -3,11 +3,18 @@ import React from "react";
 import { useGods } from "@/context/GodsContext";
 import { Eye, Home, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 const Header: React.FC = () => {
   const { stage } = useGods();
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    // Force navigation to home and reset hash
+    navigate("/");
+    window.history.pushState(null, '', "/");
+  };
 
   return (
     <header className="w-full py-4 md:py-8 px-3 md:px-6 relative z-10">
@@ -72,7 +79,7 @@ const Header: React.FC = () => {
             <Button
               variant="ghost"
               size="sm"
-              asChild
+              onClick={handleHomeClick}
               className={cn(
                 "text-resurrection-foreground rounded-full",
                 "hover:text-[#9b87f5]",
@@ -81,10 +88,8 @@ const Header: React.FC = () => {
                 "h-8 w-8 md:h-10 md:w-10"
               )}
             >
-              <Link to="/">
-                <Home className="h-3 w-3 md:h-5 md:w-5" />
-                <span className="sr-only">Home</span>
-              </Link>
+              <Home className="h-3 w-3 md:h-5 md:w-5" />
+              <span className="sr-only">Home</span>
             </Button>
           </div>
         </div>
