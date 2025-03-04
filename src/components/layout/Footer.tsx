@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center justify-center md:justify-start">
               <h2 className="text-xl font-serif font-light tracking-wide text-resurrection-foreground flex items-center">
                 <span className="text-gradient-animate mr-2">🔮</span> 
-                Resurrection
+                Talk to the Gods
                 <Cross className="mx-2 text-resurrection-accent h-5 w-5 animate-pulse-slow" />
                 <span className="text-resurrection-primary font-normal">GPT</span>
               </h2>
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
           
           <div>
             <a 
-              href="https://www.aiwebtools.ai" 
+              href="https://chatgpt.com/g/g-KrXujWZPM-talk-to-your-god-gpt" 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block"
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                 className="bg-resurrection-primary/10 border-resurrection-primary/30 hover:bg-resurrection-primary/20 text-resurrection-foreground"
               >
                 <Server className="mr-2 h-4 w-4" />
-                AI TOOL MAINFRAME
+                BEGIN DIVINE CONNECTION
               </Button>
             </a>
           </div>

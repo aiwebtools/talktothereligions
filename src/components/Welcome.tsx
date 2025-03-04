@@ -15,7 +15,7 @@ const Welcome: React.FC = () => {
   const { setStage } = useGods();
 
   const handleBegin = () => {
-    setStage("userInfo");
+    window.open("https://chatgpt.com/g/g-KrXujWZPM-talk-to-your-god-gpt", "_blank");
   };
 
   return (

@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Mail, Phone, ExternalLink, HelpCircle, FileText } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const WelcomeFooter: React.FC = () => {
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -74,7 +75,22 @@ const WelcomeFooter: React.FC = () => {
         </a>
       </div>
       
-      <p className="text-xs text-resurrection-foreground/60">
+      <div className="flex justify-center">
+        <a 
+          href="https://chatgpt.com/g/g-KrXujWZPM-talk-to-your-god-gpt" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <Button 
+            className="bg-resurrection-primary hover:bg-resurrection-primary/80 text-white"
+          >
+            Begin Your Divine Connection
+            <ExternalLink className="ml-2 h-4 w-4" />
+          </Button>
+        </a>
+      </div>
+      
+      <p className="text-xs text-resurrection-foreground/60 mt-4">
         © 2025 AI WEB TOOLS LLC. All rights reserved.
       </p>
     </div>
