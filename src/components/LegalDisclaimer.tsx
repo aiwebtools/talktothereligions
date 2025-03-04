@@ -90,14 +90,14 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({ onClose }) => {
           </Button>
           
           <a 
-            href="https://chatgpt.com/g/g-dfGHDaPWK-resurrection-gpt" 
+            href="https://chatgpt.com/g/g-KrXujWZPM-talk-to-your-god-gpt" 
             target="_blank" 
             rel="noopener noreferrer"
           >
             <Button 
               className="bg-resurrection-primary hover:bg-resurrection-primary/80 text-white"
             >
-              Begin Your Spiritual Connection
+              Begin Your Divine Connection
               <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </a>

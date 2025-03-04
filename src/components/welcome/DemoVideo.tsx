@@ -9,7 +9,7 @@ const DemoVideo: React.FC = () => {
       <div className="flex items-center justify-center gap-2 mb-3">
         <Youtube className="text-resurrection-accent" size={20} />
         <h4 className="font-medium text-resurrection-foreground/80">
-          See Resurrection GPT in Action
+          See Talk to the Gods GPT in Action
         </h4>
       </div>
       <div className={cn(
@@ -19,8 +19,8 @@ const DemoVideo: React.FC = () => {
       )}>
         <iframe 
           className="absolute top-0 left-0 w-full h-full"
-          src="https://www.youtube.com/embed/nEuxdGO-RZ4?si=YZp3h5AY3KFgH7n4&amp;start=4&amp;autoplay=1&amp;mute=0&amp;controls=1&amp;enablejsapi=1&amp;modestbranding=1&amp;rel=0&amp;hd=1&amp;vq=hd1080&amp;showinfo=0" 
-          title="Resurrection GPT Demo" 
+          src="https://www.youtube.com/embed/Yw_z9NYHlPA?si=YZp3h5AY3KFgH7n4&amp;autoplay=1&amp;mute=0&amp;controls=1&amp;enablejsapi=1&amp;modestbranding=1&amp;rel=0&amp;hd=1&amp;vq=hd1080&amp;showinfo=0" 
+          title="Talk to the Gods GPT Demo" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
           allowFullScreen
         ></iframe>

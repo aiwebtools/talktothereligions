@@ -70,7 +70,7 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
         <div className="mb-8 border border-resurrection-primary/20 rounded-lg p-4 bg-yellow-50/10">
           <h3 className="font-medium text-resurrection-primary text-lg flex items-start mb-3">
             <AlertTriangle className="h-5 w-5 mr-2 mt-1 flex-shrink-0 text-yellow-500" />
-            <span>Legal Disclaimer for Resurrection GPT</span>
+            <span>Legal Disclaimer for Talk to the Gods GPT</span>
           </h3>
           <div className="space-y-3 text-sm pl-7">
             <div>
@@ -161,14 +161,14 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
           </Button>
           
           <a 
-            href="https://chatgpt.com/g/g-dfGHDaPWK-resurrection-gpt" 
+            href="https://chatgpt.com/g/g-KrXujWZPM-talk-to-your-god-gpt" 
             target="_blank" 
             rel="noopener noreferrer"
           >
             <Button 
               className="bg-resurrection-primary hover:bg-resurrection-primary/80 text-white"
             >
-              Begin Your Spiritual Connection
+              Begin Your Divine Connection
               <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </a>
