@@ -89,11 +89,7 @@ const Header: React.FC = () => {
           </div>
         </div>
         
-        {stage === "welcome" && (
-          <p className="text-resurrection-foreground/70 animate-fade-in max-w-lg mx-auto text-[8px] md:text-xs px-2 tracking-wide leading-relaxed hidden md:block">
-            Connect with the divine through an immersive spiritual experience with the deity of your choice.
-          </p>
-        )}
+        {/* Removed duplicate tagline here that was conditionally displayed */}
       </div>
     </header>
   );
