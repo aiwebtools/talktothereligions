@@ -8,9 +8,9 @@ import { motion } from "framer-motion";
 import { InfoIcon } from "lucide-react";
 
 const Index: React.FC = () => {
-  // Add some dynamic page title updates
+  // Update the page title to better reflect the tool's name
   useEffect(() => {
-    document.title = "Talk to the Gods GPT | Divine Connection";
+    document.title = "Talk to the Gods | Divine Communication Simulator";
   }, []);
 
   return (
