@@ -4,6 +4,7 @@ import { GodsProvider } from "@/context/GodsContext";
 import Header from "@/components/Header";
 import MainContent from "@/components/layout/MainContent";
 import Particles from "@/components/Particles";
+import HomeFAQ from "@/components/HomeFAQ";
 import { motion } from "framer-motion";
 import { InfoIcon } from "lucide-react";
 
@@ -32,6 +33,7 @@ const Index: React.FC = () => {
             </p>
           </motion.div>
           <MainContent />
+          <HomeFAQ />
         </div>
       </div>
     </GodsProvider>
