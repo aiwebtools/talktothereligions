@@ -1,7 +1,7 @@
 
 import React from "react";
 import { useGods } from "@/context/GodsContext";
-import { Eye, Home, AlertTriangle } from "lucide-react";
+import { Eye, Home, AlertTriangle, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -64,6 +64,24 @@ const Header: React.FC = () => {
               asChild
               className={cn(
                 "text-resurrection-foreground rounded-full",
+                "hover:text-[#9b87f5]",
+                "hover:bg-[#9b87f5]/10",
+                "border border-[#9b87f5]/20",
+                "h-8 w-8 md:h-10 md:w-10"
+              )}
+            >
+              <a href="#faq">
+                <HelpCircle className="h-3 w-3 md:h-5 md:w-5 text-[#9b87f5]" />
+                <span className="sr-only">FAQ</span>
+              </a>
+            </Button>
+
+            <Button
+              variant="ghost"
+              size="sm"
+              asChild
+              className={cn(
+                "text-resurrection-foreground rounded-full",
                 "hover:text-yellow-400",
                 "hover:bg-yellow-400/10",
                 "border border-yellow-400/20",
@@ -93,8 +111,6 @@ const Header: React.FC = () => {
             </Button>
           </div>
         </div>
-        
-        {/* Removed duplicate tagline here that was conditionally displayed */}
       </div>
     </header>
   );

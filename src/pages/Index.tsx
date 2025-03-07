@@ -33,7 +33,6 @@ const Index: React.FC = () => {
             </p>
           </motion.div>
           <MainContent />
-          <HomeFAQ />
         </div>
       </div>
     </GodsProvider>

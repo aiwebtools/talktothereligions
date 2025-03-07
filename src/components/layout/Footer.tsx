@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Mail, Phone, Eye, ExternalLink, FileText, HelpCircle, Server } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -50,6 +51,13 @@ const Footer: React.FC = () => {
           
           <div className="grid grid-cols-2 gap-y-2 gap-x-4 md:gap-y-3 md:gap-x-6 mb-4 md:mb-0 text-[10px] md:text-xs">
             <a 
+              href="#faq" 
+              className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
+            >
+              <HelpCircle size={10} className="mr-1 md:mr-1.5 group-hover:animate-pulse-slow" />
+              <span className="group-hover:underline">FAQ</span>
+            </a>
+            <a 
               href="#disclaimer" 
               className="hover:text-resurrection-primary transition-colors duration-300 flex items-center group"
             >
@@ -73,13 +81,6 @@ const Footer: React.FC = () => {
             >
               <ExternalLink size={10} className="mr-1 md:mr-1.5 group-hover:rotate-45 transition-transform duration-300" />
               <span className="group-hover:underline">Terms of Service</span>
-            </a>
-            <a 
-              href="#faq" 
-              className="hover:text-resurrection-primary transition-colors duration-300 group flex items-center"
-            >
-              <HelpCircle size={10} className="mr-1 md:mr-1.5 group-hover:animate-pulse-slow" />
-              <span className="group-hover:underline">FAQ</span>
             </a>
           </div>
         </div>

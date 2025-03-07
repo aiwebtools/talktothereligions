@@ -59,6 +59,13 @@ const WelcomeFooter: React.FC = () => {
       
       <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-y-2 justify-center mb-5 text-[9px] sm:text-xs">
         <a 
+          href="#faq"
+          className="flex items-center justify-center gap-1 md:gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
+        >
+          <HelpCircle size={10} className="group-hover:animate-pulse-slow" />
+          <span className="group-hover:underline">FAQ</span>
+        </a>
+        <a 
           href="#disclaimer"
           className="flex items-center justify-center gap-1 md:gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
         >
@@ -82,13 +89,6 @@ const WelcomeFooter: React.FC = () => {
         >
           <ExternalLink size={10} className="group-hover:rotate-45 transition-transform duration-300" />
           <span className="group-hover:underline">Terms of Service</span>
-        </a>
-        <a 
-          href="#faq"
-          className="flex items-center justify-center gap-1 md:gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
-        >
-          <HelpCircle size={10} className="group-hover:animate-pulse-slow" />
-          <span className="group-hover:underline">FAQ</span>
         </a>
       </div>
       

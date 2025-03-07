@@ -7,6 +7,7 @@ import UserForm from "@/components/UserForm";
 import QuestionFlow from "@/components/QuestionFlow";
 import LoadingScreen from "@/components/LoadingScreen";
 import LetterFromHeaven from "@/components/LetterFromHeaven";
+import HomeFAQ from "@/components/HomeFAQ";
 import FAQ from "@/components/FAQ";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
 import Footer from "./Footer";
@@ -76,7 +77,11 @@ const MainContent: React.FC = () => {
         )}
       </main>
       
-      {(stage === "welcome" || showFAQ || showDisclaimer) && <Footer />}
+      {/* Always show HomeFAQ except when showing full FAQ or disclaimer */}
+      {!showFAQ && !showDisclaimer && <HomeFAQ />}
+      
+      {/* Always show Footer */}
+      <Footer />
     </div>
   );
 };
