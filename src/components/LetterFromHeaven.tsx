@@ -70,15 +70,31 @@ const LetterFromHeaven: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="glass-card rounded-xl p-2 sm:p-6 shadow-xl dark-glow"
+        className="glass-card rounded-xl p-2 sm:p-6 shadow-xl dark-glow before:absolute before:inset-0 before:bg-gradient-to-b before:from-resurrection-primary/10 before:to-resurrection-accent/5 before:rounded-xl before:z-0"
       >
-        <div className="letter-paper rounded-lg p-6 md:p-8 relative overflow-hidden">
+        <div className="letter-paper rounded-lg p-6 md:p-8 relative overflow-hidden backdrop-blur-lg bg-black/30 border border-resurrection-primary/30 shadow-[0_0_30px_rgba(155,135,245,0.2)]">
           <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-resurrection-background/90 to-transparent z-10"></div>
           <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-resurrection-background/90 to-transparent z-10"></div>
           
-          <h3 className="text-center text-xl md:text-2xl font-serif text-resurrection-foreground mb-6 animate-fade-in flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="absolute -top-10 -left-10 w-20 h-20 bg-resurrection-primary/10 rounded-full blur-xl z-0"
+          ></motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="absolute -bottom-10 -right-10 w-20 h-20 bg-resurrection-accent/10 rounded-full blur-xl z-0"
+          ></motion.div>
+          
+          <h3 className="text-center text-xl md:text-2xl font-serif text-resurrection-foreground mb-6 animate-fade-in flex items-center justify-center relative z-20">
             <span className="text-resurrection-accent mr-2">📜</span> 
-            A Letter From Heaven 
+            <span className="bg-gradient-to-r from-resurrection-primary via-white to-resurrection-accent bg-clip-text text-transparent">
+              A Letter From The Divine
+            </span>
             <span className="text-resurrection-accent ml-2">📜</span>
           </h3>
           
@@ -87,7 +103,7 @@ const LetterFromHeaven: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2 }}
-              className="prose prose-sm sm:prose-base max-w-none font-serif text-resurrection-foreground/90 mb-6 animate-fade-in whitespace-pre-line"
+              className="prose prose-sm sm:prose-base max-w-none font-serif text-resurrection-foreground/90 mb-6 animate-fade-in whitespace-pre-line relative z-20"
               style={{ 
                 maxHeight: "50vh", 
                 overflowY: "auto",
@@ -107,40 +123,40 @@ const LetterFromHeaven: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-col gap-3 mt-8 animate-fade-in"
+              className="flex flex-col gap-3 mt-8 animate-fade-in relative z-20"
             >
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button 
                   onClick={handleSaveLetter}
-                  className="flex-1 bg-resurrection-primary hover:bg-resurrection-secondary text-white transition-all btn-glow"
+                  className="flex-1 bg-resurrection-primary hover:bg-resurrection-secondary text-white transition-all btn-glow relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-resurrection-primary before:to-resurrection-secondary before:opacity-100 before:z-0"
                 >
-                  <Save className="mr-2 h-4 w-4" />
-                  Save Letter
+                  <Save className="mr-2 h-4 w-4 relative z-10" />
+                  <span className="relative z-10">Save Letter</span>
                 </Button>
                 
                 <Button 
                   onClick={handleDownloadLetter}
-                  className="flex-1 bg-muted hover:bg-muted/80 text-resurrection-foreground/90 border border-white/10"
+                  className="flex-1 bg-muted hover:bg-muted/80 text-resurrection-foreground/90 border border-white/10 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-muted before:to-muted/80 before:opacity-100 before:z-0"
                 >
-                  <Download className="mr-2 h-4 w-4" />
-                  Download Letter
+                  <Download className="mr-2 h-4 w-4 relative z-10" />
+                  <span className="relative z-10">Download Letter</span>
                 </Button>
               </div>
               
               <Button
                 onClick={handleEmailLetter}
-                className="bg-resurrection-secondary/80 hover:bg-resurrection-secondary text-white transition-all"
+                className="bg-resurrection-secondary/80 hover:bg-resurrection-secondary text-white transition-all relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-resurrection-secondary/80 before:to-resurrection-secondary before:opacity-100 before:z-0"
               >
-                <Mail className="mr-2 h-4 w-4" />
-                Email This Letter
+                <Mail className="mr-2 h-4 w-4 relative z-10" />
+                <span className="relative z-10">Email This Letter</span>
               </Button>
               
               <Button
                 onClick={handleNewConnection}
-                className="bg-resurrection-accent/80 hover:bg-resurrection-accent text-white transition-all mt-2"
+                className="bg-resurrection-accent/80 hover:bg-resurrection-accent text-white transition-all mt-2 relative overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-resurrection-accent/80 before:to-resurrection-accent before:opacity-100 before:z-0"
               >
-                <RefreshCw className="mr-2 h-4 w-4" />
-                Start a New Connection
+                <RefreshCw className="mr-2 h-4 w-4 relative z-10" />
+                <span className="relative z-10">Start a New Connection</span>
               </Button>
             </motion.div>
           )}

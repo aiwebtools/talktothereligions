@@ -44,8 +44,19 @@ const MainContent: React.FC = () => {
     };
   }, []);
   
+  // Add a divine glow element
+  const DivineLightEffect = () => (
+    <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-resurrection-primary/5 rounded-full blur-[100px] animate-pulse-slow"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-resurrection-accent/5 rounded-full blur-[80px] animate-pulse-slow animation-delay-1000"></div>
+      <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-resurrection-secondary/5 rounded-full blur-[90px] animate-pulse-slow animation-delay-2000"></div>
+    </div>
+  );
+  
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col relative">
+      <DivineLightEffect />
+      
       <main className="flex-1 container mx-auto px-4 py-6 md:py-10 relative z-10">
         {showFAQ ? (
           <FAQ onClose={() => {
