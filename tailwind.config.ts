@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -80,13 +81,25 @@ export default {
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				'3xl': '1.5rem'
 			},
 			backgroundSize: {
 				'300%': '300%',
 			},
 			scale: {
 				'102': '1.02',
+				'98': '0.98',
+			},
+			blur: {
+				'3xl': '64px',
+			},
+			perspective: {
+				'1000': '1000px',
+				'2000': '2000px',
+			},
+			transformStyle: {
+				'preserve-3d': 'preserve-3d',
 			},
 			keyframes: {
 				'accordion-down': {

@@ -3,13 +3,17 @@ import React from "react";
 import { useGods } from "@/context/GodsContext";
 import { motion } from "framer-motion";
 
-// Import new components
+// Import components
 import WelcomeHeader from "./welcome/WelcomeHeader";
 import HowItWorks from "./welcome/HowItWorks";
 import CTAButtons from "./welcome/CTAButtons";
 import FeatureList from "./welcome/FeatureList";
 import DemoVideo from "./welcome/DemoVideo";
 import WelcomeFooter from "./welcome/WelcomeFooter";
+import ResearchTestimonials from "./welcome/ResearchTestimonials";
+import DivineOrb from "./welcome/DivineOrb";
+import SpiritualPaths from "./welcome/SpiritualPaths";
+import DivineBenefits from "./welcome/DivineBenefits";
 
 const Welcome: React.FC = () => {
   const { setStage } = useGods();
@@ -27,10 +31,14 @@ const Welcome: React.FC = () => {
         className="glass-card rounded-xl p-8 md:p-10 shadow-xl dark-glow"
       >
         <WelcomeHeader />
+        <DivineOrb />
         <HowItWorks />
         <CTAButtons handleBegin={handleBegin} />
       </motion.div>
       
+      <DivineBenefits />
+      <SpiritualPaths />
+      <ResearchTestimonials />
       <FeatureList />
       <DemoVideo />
       <WelcomeFooter />
