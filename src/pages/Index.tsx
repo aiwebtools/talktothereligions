@@ -1,17 +1,39 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { GodsProvider } from "@/context/GodsContext";
 import Header from "@/components/Header";
 import MainContent from "@/components/layout/MainContent";
 import Particles from "@/components/Particles";
 import { motion } from "framer-motion";
 import { InfoIcon } from "lucide-react";
+import AgreementPopup from "@/components/AgreementPopup";
+import { useToast } from "@/hooks/use-toast";
 
 const Index: React.FC = () => {
+  const [hasAgreed, setHasAgreed] = useState(false);
+  const { toast } = useToast();
+  
+  // Check if user has already agreed on component mount
+  useEffect(() => {
+    const savedAgreement = localStorage.getItem("divineTool_userAgreement");
+    if (savedAgreement) {
+      setHasAgreed(true);
+    }
+  }, []);
+
   // Update the page title to better reflect the tool's name
   useEffect(() => {
     document.title = "Talk to the Gods | Divine Communication Simulator";
   }, []);
+  
+  const handleAgree = () => {
+    setHasAgreed(true);
+    toast({
+      title: "Welcome to the Divine Experience",
+      description: "Thank you for acknowledging our research disclosure.",
+      duration: 5000,
+    });
+  };
 
   return (
     <GodsProvider>
@@ -35,6 +57,9 @@ const Index: React.FC = () => {
           <MainContent />
         </div>
       </div>
+      
+      {/* Display the agreement popup */}
+      <AgreementPopup onAgree={handleAgree} />
     </GodsProvider>
   );
 };
