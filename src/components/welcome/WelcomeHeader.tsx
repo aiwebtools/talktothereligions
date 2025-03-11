@@ -1,11 +1,44 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { AlertTriangle, Sparkles } from "lucide-react";
+import { AlertTriangle, Sparkles, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const WelcomeHeader: React.FC = () => {
   return (
     <>
+      {/* New prominent CTA button */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="mb-10"
+      >
+        <a 
+          href="https://chatgpt.com/g/g-KrXujWZPM-talk-to-your-god-gpt" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-block"
+        >
+          <Button 
+            className={cn(
+              "bg-gradient-to-r from-resurrection-primary via-divine-purple to-resurrection-accent text-white",
+              "text-xl md:text-2xl font-serif py-6 px-8 rounded-xl",
+              "shadow-lg shadow-resurrection-primary/25 hover:shadow-resurrection-primary/40",
+              "border border-white/10 backdrop-blur-sm relative overflow-hidden",
+              "transform transition-all duration-500 hover:scale-105 active:scale-95",
+              "animate-pulse-slow"
+            )}
+          >
+            <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
+            <Zap className="h-6 w-6 mr-2 text-yellow-200 animate-pulse" />
+            TALK TO THE GODS GPT NOW
+            <Zap className="h-6 w-6 ml-2 text-yellow-200 animate-pulse" />
+          </Button>
+        </a>
+      </motion.div>
+      
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
