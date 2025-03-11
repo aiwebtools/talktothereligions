@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 const Logo: React.FC = () => {
   return (
-    <div className="hidden sm:flex items-center justify-center sm:justify-start">
+    <div className="hidden sm:flex flex-col items-center justify-center sm:justify-start">
       <h1 
         className={cn(
           "text-xl sm:text-2xl md:text-5xl font-serif font-light",
@@ -29,7 +29,7 @@ const Logo: React.FC = () => {
         <span className="bg-gradient-to-r from-[#9b87f5] to-[#8B5CF6] bg-clip-text text-transparent font-normal text-xs sm:text-sm md:text-2xl">Gods GPT</span>
       </h1>
       
-      <div className="ml-4 sm:ml-6">
+      <div className="text-center mt-1">
         <a 
           href="https://www.aiwebtools.ai"
           target="_blank"
@@ -37,7 +37,7 @@ const Logo: React.FC = () => {
           className={cn(
             "text-[8px] sm:text-[10px] md:text-xs text-resurrection-foreground/60",
             "hover:text-resurrection-primary transition-colors duration-300",
-            "animate-fade-in inline-block tracking-wide"
+            "animate-fade-in tracking-wide"
           )}
         >
           Presented by AiWebTools.Ai
