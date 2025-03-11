@@ -52,18 +52,20 @@ const Header: React.FC = () => {
                 </h1>
               </div>
               
-              <a 
-                href="https://www.aiwebtools.ai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  "text-[8px] sm:text-[10px] md:text-xs text-resurrection-foreground/60",
-                  "hover:text-resurrection-primary transition-colors duration-300",
-                  "animate-fade-in inline-block tracking-wide mt-1 sm:mt-0"
-                )}
-              >
-                Presented by AiWebTools.Ai
-              </a>
+              <div className="text-center w-full">
+                <a 
+                  href="https://www.aiwebtools.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    "text-[8px] sm:text-[10px] md:text-xs text-resurrection-foreground/60",
+                    "hover:text-resurrection-primary transition-colors duration-300",
+                    "animate-fade-in inline-block tracking-wide mt-1"
+                  )}
+                >
+                  Presented by AiWebTools.Ai
+                </a>
+              </div>
             </div>
 
             <div className="flex sm:hidden items-center justify-between w-full px-2">
