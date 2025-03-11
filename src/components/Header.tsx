@@ -1,17 +1,22 @@
-
-import React from "react";
+import React, { useState } from "react";
 import { useGods } from "@/context/GodsContext";
-import { Eye, Home, AlertTriangle, HelpCircle } from "lucide-react";
+import { Eye, Home, AlertTriangle, HelpCircle, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header: React.FC = () => {
   const { stage } = useGods();
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleHomeClick = () => {
-    // Force navigation to home and reset hash
     navigate("/");
     window.history.pushState(null, '', "/");
   };
@@ -20,8 +25,8 @@ const Header: React.FC = () => {
     <header className="w-full py-3 sm:py-4 md:py-8 px-2 sm:px-3 md:px-6 relative z-10">
       <div className="container mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0 mb-2 sm:mb-3 md:mb-5">
-          <div className="text-center w-full sm:w-auto">
-            <div className="flex items-center justify-center sm:justify-start">
+          <div className="text-center w-full sm:w-auto relative">
+            <div className="hidden sm:flex items-center justify-center sm:justify-start">
               <h1 
                 className={cn(
                   "text-xl sm:text-2xl md:text-5xl font-serif font-light",
@@ -40,7 +45,45 @@ const Header: React.FC = () => {
                 <span className="bg-gradient-to-r from-[#9b87f5] to-[#8B5CF6] bg-clip-text text-transparent font-normal text-xs sm:text-sm md:text-2xl">Gods GPT</span>
               </h1>
             </div>
-            
+
+            <div className="flex sm:hidden items-center justify-between w-full px-2">
+              <h1 className="text-lg font-serif text-white/90">Talk to the Gods GPT</h1>
+              
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    className="p-1"
+                  >
+                    <Menu className="h-6 w-6 text-white/90" />
+                    <span className="sr-only">Menu</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent 
+                  className="w-56 bg-resurrection-background/95 backdrop-blur-sm border border-resurrection-accent/20"
+                  align="end"
+                >
+                  <DropdownMenuItem onClick={handleHomeClick}>
+                    <Home className="mr-2 h-4 w-4" />
+                    <span>Home</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="#faq" className="flex items-center">
+                      <HelpCircle className="mr-2 h-4 w-4" />
+                      <span>FAQ</span>
+                    </a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <a href="#disclaimer" className="flex items-center">
+                      <AlertTriangle className="mr-2 h-4 w-4" />
+                      <span>Legal Disclaimer</span>
+                    </a>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+
             <a 
               href="https://www.aiwebtools.ai"
               target="_blank"
@@ -59,7 +102,7 @@ const Header: React.FC = () => {
             </p>
           </div>
           
-          <div className="flex items-center gap-2 md:gap-3 mt-1 sm:mt-0">
+          <div className="hidden sm:flex items-center gap-2 md:gap-3 mt-1 sm:mt-0">
             <Button
               variant="ghost"
               size="sm"
