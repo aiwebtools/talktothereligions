@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle, Sparkles, Zap } from "lucide-react";
@@ -19,12 +18,12 @@ const WelcomeHeader: React.FC = () => {
           href="https://chatgpt.com/g/g-KrXujWZPM-talk-to-your-god-gpt" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-block"
+          className="inline-block w-full max-w-full"
         >
           <Button 
             className={cn(
               "bg-gradient-to-r from-resurrection-primary via-divine-purple to-resurrection-accent text-white",
-              "text-xl md:text-2xl font-serif py-6 px-8 rounded-xl",
+              "text-base sm:text-lg md:text-2xl font-serif py-4 sm:py-5 md:py-6 px-4 sm:px-6 md:px-8 rounded-xl w-full sm:w-auto",
               "shadow-lg shadow-resurrection-primary/25 hover:shadow-resurrection-primary/40",
               "border border-white/10 backdrop-blur-sm relative overflow-hidden",
               "transform transition-all duration-500 hover:scale-105 active:scale-95",
@@ -32,9 +31,9 @@ const WelcomeHeader: React.FC = () => {
             )}
           >
             <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
-            <Zap className="h-6 w-6 mr-2 text-yellow-200 animate-pulse" />
-            TALK TO THE GODS GPT NOW
-            <Zap className="h-6 w-6 ml-2 text-yellow-200 animate-pulse" />
+            <Zap className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 mr-1 sm:mr-2 text-yellow-200 animate-pulse flex-shrink-0" />
+            <span className="whitespace-normal sm:whitespace-nowrap">TALK TO THE GODS GPT NOW</span>
+            <Zap className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 ml-1 sm:ml-2 text-yellow-200 animate-pulse flex-shrink-0" />
           </Button>
         </a>
       </motion.div>
@@ -44,13 +43,13 @@ const WelcomeHeader: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h2 className="text-2xl md:text-4xl font-serif text-resurrection-foreground mb-8 text-gradient-animate leading-relaxed">
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-serif text-resurrection-foreground mb-6 md:mb-8 text-gradient-animate leading-relaxed px-2">
           Connect. Receive Divine Wisdom.
           <br />Find Spiritual Guidance.
         </h2>
       </motion.div>
       
-      <div className="space-y-5 text-resurrection-foreground/80 mb-10 max-w-3xl mx-auto">
+      <div className="space-y-4 md:space-y-5 text-resurrection-foreground/80 mb-8 md:mb-10 max-w-3xl mx-auto px-3">
         <motion.p 
           className="text-lg text-resurrection-accent flex items-center justify-center"
           initial={{ opacity: 0 }}
@@ -85,7 +84,7 @@ const WelcomeHeader: React.FC = () => {
       </div>
       
       <motion.div 
-        className="mb-8 p-4 border border-yellow-400/30 rounded-lg bg-yellow-50/10 text-sm text-left"
+        className="mb-8 p-3 sm:p-4 border border-yellow-400/30 rounded-lg bg-yellow-50/10 text-sm text-left"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 1 }}
