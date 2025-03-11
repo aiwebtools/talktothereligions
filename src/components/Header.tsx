@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { useGods } from "@/context/GodsContext";
-import { Eye, Home, AlertTriangle, HelpCircle, Menu, Sparkles, ExternalLink } from "lucide-react";
+import { Eye, Home, AlertTriangle, HelpCircle, Menu, Sparkles, ExternalLink, Wand2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -44,12 +44,19 @@ const Header: React.FC = () => {
                   fill="#9b87f5" 
                   fillOpacity={0.2} 
                 />
+                <Wand2 className="mr-1 md:mr-2 h-3 w-3 sm:h-4 sm:w-4 md:h-7 md:w-7 text-[#9b87f5] animate-float" 
+                  strokeWidth={1.5}
+                />
                 <span className="bg-gradient-to-r from-[#9b87f5] to-[#8B5CF6] bg-clip-text text-transparent font-normal text-xs sm:text-sm md:text-2xl">Gods GPT</span>
               </h1>
             </div>
 
             <div className="flex sm:hidden items-center justify-between w-full px-2">
-              <h1 className="text-lg font-serif text-white/90">Talk to the Gods GPT</h1>
+              <h1 className="text-lg font-serif text-white/90 flex items-center">
+                <span>Talk to the</span>
+                <Wand2 className="mx-1 h-4 w-4 text-[#9b87f5]" strokeWidth={1.5} />
+                <span className="text-[#9b87f5]">Gods GPT</span>
+              </h1>
               
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
