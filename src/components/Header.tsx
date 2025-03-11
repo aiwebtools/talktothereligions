@@ -80,6 +80,20 @@ const Header: React.FC = () => {
                       <ExternalLink className="h-3 w-3 ml-2" />
                     </a>
                   </DropdownMenuItem>
+                  <DropdownMenuItem asChild className="text-blue-400 hover:text-blue-300">
+                    <a 
+                      href="https://www.aiwebtools.ai" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between w-full"
+                    >
+                      <span className="flex items-center">
+                        <ExternalLink className="mr-2 h-4 w-4" />
+                        <span>Access more AI tools</span>
+                      </span>
+                      <ExternalLink className="h-3 w-3 ml-2" />
+                    </a>
+                  </DropdownMenuItem>
                   <DropdownMenuSeparator className="bg-resurrection-accent/20" />
                   <DropdownMenuItem onClick={handleHomeClick}>
                     <Home className="mr-2 h-4 w-4" />
@@ -120,6 +134,29 @@ const Header: React.FC = () => {
           </div>
           
           <div className="hidden sm:flex items-center gap-2 md:gap-3 mt-1 sm:mt-0">
+            <Button
+              variant="ghost"
+              size="sm"
+              asChild
+              className={cn(
+                "text-resurrection-foreground rounded-full",
+                "hover:text-blue-400",
+                "hover:bg-blue-400/10",
+                "border border-blue-400/20",
+                "h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10"
+              )}
+            >
+              <a 
+                href="https://www.aiwebtools.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Access more AI tools"
+              >
+                <ExternalLink className="h-3 w-3 md:h-5 md:w-5 text-blue-400" />
+                <span className="sr-only">Access more AI tools</span>
+              </a>
+            </Button>
+            
             <Button
               variant="ghost"
               size="sm"
