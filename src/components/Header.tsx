@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useGods } from "@/context/GodsContext";
 import { Eye, Home, AlertTriangle, HelpCircle, Menu, Sparkles, ExternalLink, Wand2 } from "lucide-react";
@@ -158,11 +157,11 @@ const Header: React.FC = () => {
               size="sm"
               asChild
               className={cn(
-                "text-resurrection-foreground rounded-full",
+                "text-resurrection-foreground rounded-md",
                 "hover:text-blue-400",
                 "hover:bg-blue-400/10",
                 "border border-blue-400/20",
-                "h-7 w-7 sm:h-8 sm:w-8 md:h-10 md:w-10"
+                "h-8 px-3 sm:h-9 md:h-10"
               )}
             >
               <a 
@@ -170,9 +169,10 @@ const Header: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Access more AI tools"
+                className="flex items-center gap-2"
               >
-                <ExternalLink className="h-3 w-3 md:h-5 md:w-5 text-blue-400" />
-                <span className="sr-only">Access more AI tools</span>
+                <ExternalLink className="h-3 w-3 md:h-4 md:w-4 text-blue-400" />
+                <span className="text-xs md:text-sm text-blue-400">More AI Tools</span>
               </a>
             </Button>
             
