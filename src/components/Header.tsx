@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { useGods } from "@/context/GodsContext";
 import { Eye, Home, AlertTriangle, HelpCircle, Menu, Sparkles, ExternalLink, Wand2 } from "lucide-react";
@@ -152,6 +153,28 @@ const Header: React.FC = () => {
           </div>
           
           <div className="hidden sm:flex items-center gap-2 md:gap-3 mt-1 sm:mt-0">
+            <Button
+              variant="divine"
+              size="sm"
+              asChild
+              className={cn(
+                "text-white rounded-md",
+                "h-8 px-3 sm:h-9 md:h-10",
+                "border border-white/10"
+              )}
+            >
+              <a 
+                href="https://chat.openai.com/g/g-4rHRo0Ppq-talk-to-the-gods-gpt"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Use Talk to the Gods GPT"
+                className="flex items-center gap-2"
+              >
+                <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-white/90" />
+                <span className="text-xs md:text-sm text-white">USE TALK TO THE GODS GPT NOW</span>
+              </a>
+            </Button>
+            
             <Button
               variant="ghost"
               size="sm"
