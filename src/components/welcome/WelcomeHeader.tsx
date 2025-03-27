@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 import { AlertTriangle, Sparkles, Zap } from "lucide-react";
@@ -43,9 +44,11 @@ const WelcomeHeader: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <h2 className="text-xl sm:text-2xl md:text-4xl font-serif text-resurrection-foreground mb-6 md:mb-8 text-gradient-animate leading-relaxed px-2">
-          Connect. Receive Divine Wisdom.
-          <br />Find Spiritual Guidance.
+        <h2 className="text-xl sm:text-2xl md:text-4xl font-serif text-resurrection-foreground mb-6 md:mb-8 leading-relaxed px-2">
+          <span className="bg-gradient-to-r from-resurrection-primary via-divine-purple to-resurrection-accent bg-clip-text text-transparent">
+            Connect. Receive Divine Wisdom.
+            <br />Find Spiritual Guidance.
+          </span>
         </h2>
       </motion.div>
       
