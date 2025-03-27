@@ -1,6 +1,8 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { MessageCircle } from 'lucide-react';
+import { Button } from './ui/button';
 
 declare global {
   namespace JSX {
@@ -15,6 +17,7 @@ declare global {
 
 const ElevenLabsWidget: React.FC = () => {
   const isMobile = useIsMobile();
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     // Add the API key to the widget once it's loaded
@@ -29,22 +32,40 @@ const ElevenLabsWidget: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const toggleWidget = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <elevenlabs-convai 
-      agent-id="yZ98Wmjs6VqYsGE5F07R"
-      style={{ 
-        display: 'block',
-        position: 'fixed',
-        bottom: isMobile ? '20px' : '20px',
-        right: isMobile ? '5px' : '20px',
-        width: isMobile ? '90vw' : '350px',
-        height: '500px',
-        maxHeight: isMobile ? '70vh' : '500px',
-        borderRadius: '12px',
-        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
-        zIndex: 999
-      }}
-    />
+    <>
+      {isOpen && (
+        <elevenlabs-convai 
+          agent-id="yZ98Wmjs6VqYsGE5F07R"
+          style={{ 
+            display: 'block',
+            position: 'fixed',
+            bottom: isMobile ? '80px' : '80px', // Positioned higher to leave room for the button
+            right: isMobile ? '5px' : '20px',
+            width: isMobile ? '90vw' : '350px',
+            height: '500px',
+            maxHeight: isMobile ? '70vh' : '500px',
+            borderRadius: '12px',
+            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
+            zIndex: 999
+          }}
+        />
+      )}
+      
+      <Button
+        onClick={toggleWidget}
+        variant="divine"
+        size="icon"
+        className="fixed bottom-4 right-4 rounded-full p-3 shadow-lg z-[1000]"
+        aria-label="Toggle divine chat"
+      >
+        <MessageCircle className={`h-6 w-6 transition-transform ${isOpen ? 'rotate-45' : ''}`} />
+      </Button>
+    </>
   );
 };
 
