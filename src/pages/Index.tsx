@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { InfoIcon } from "lucide-react";
 import AgreementPopup from "@/components/AgreementPopup";
 import { useToast } from "@/hooks/use-toast";
+import ElevenLabsWidget from "@/components/ElevenLabsWidget";
 
 const Index: React.FC = () => {
   const [hasAgreed, setHasAgreed] = useState(false);
@@ -60,6 +61,9 @@ const Index: React.FC = () => {
       
       {/* Display the agreement popup */}
       <AgreementPopup onAgree={handleAgree} />
+      
+      {/* Add the ElevenLabs Conversational AI Widget */}
+      <ElevenLabsWidget />
     </GodsProvider>
   );
 };
