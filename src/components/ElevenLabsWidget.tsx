@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { Sparkles } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 declare global {
   namespace JSX {
@@ -14,6 +15,8 @@ declare global {
 }
 
 const ElevenLabsWidget: React.FC = () => {
+  const isMobile = useIsMobile();
+
   useEffect(() => {
     // Add the API key to the widget once it's loaded
     const interval = setInterval(() => {
@@ -36,7 +39,7 @@ const ElevenLabsWidget: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-5 right-5 z-50">
+    <div className="fixed bottom-5 right-5 z-[1000]">
       <div className="relative">
         <button 
           className="bg-resurrection-primary hover:bg-resurrection-accent text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
@@ -54,13 +57,15 @@ const ElevenLabsWidget: React.FC = () => {
         style={{ 
           display: 'none',
           position: 'fixed',
-          bottom: '80px',
-          right: '20px',
-          width: '350px',
+          bottom: isMobile ? '80px' : '80px',
+          right: isMobile ? '5px' : '20px',
+          width: isMobile ? '90vw' : '350px',
           height: '500px',
+          maxHeight: isMobile ? '70vh' : '500px',
           borderRadius: '12px',
           boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
-          zIndex: 50
+          zIndex: 999,
+          opacity: 1
         }}
       ></elevenlabs-convai>
     </div>
