@@ -30,24 +30,21 @@ const ElevenLabsWidget: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-5 right-5 z-[1000]">      
-      <elevenlabs-convai 
-        agent-id="yZ98Wmjs6VqYsGE5F07R"
-        style={{ 
-          display: 'block', // Always visible
-          position: 'fixed',
-          bottom: isMobile ? '20px' : '20px',
-          right: isMobile ? '5px' : '20px',
-          width: isMobile ? '90vw' : '350px',
-          height: '500px',
-          maxHeight: isMobile ? '70vh' : '500px',
-          borderRadius: '12px',
-          boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
-          zIndex: 999,
-          opacity: 1
-        }}
-      ></elevenlabs-convai>
-    </div>
+    <elevenlabs-convai 
+      agent-id="yZ98Wmjs6VqYsGE5F07R"
+      style={{ 
+        display: 'block',
+        position: 'fixed',
+        bottom: isMobile ? '20px' : '20px',
+        right: isMobile ? '5px' : '20px',
+        width: isMobile ? '90vw' : '350px',
+        height: '500px',
+        maxHeight: isMobile ? '70vh' : '500px',
+        borderRadius: '12px',
+        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
+        zIndex: 999
+      }}
+    />
   );
 };
 
