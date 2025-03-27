@@ -59,11 +59,14 @@ const ElevenLabsWidget: React.FC = () => {
       <Button
         onClick={toggleWidget}
         variant="divine"
-        size="icon"
-        className="fixed bottom-4 right-4 rounded-full p-3 shadow-lg z-[1000]"
+        size={isOpen ? "default" : "icon"}
+        className="fixed bottom-4 right-4 rounded-full shadow-lg z-[1000] transition-all duration-300"
         aria-label="Toggle divine chat"
       >
-        <MessageCircle className={`h-6 w-6 transition-transform ${isOpen ? 'rotate-45' : ''}`} />
+        <MessageCircle className={`h-6 w-6 transition-transform ${isOpen ? 'mr-2' : ''}`} />
+        {isOpen && (
+          <span className="text-white font-semibold animate-pulse">LIVE</span>
+        )}
       </Button>
     </>
   );
