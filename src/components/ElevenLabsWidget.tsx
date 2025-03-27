@@ -39,33 +39,47 @@ const ElevenLabsWidget: React.FC = () => {
   return (
     <>
       {isOpen && (
-        <elevenlabs-convai 
-          agent-id="yZ98Wmjs6VqYsGE5F07R"
-          style={{ 
-            display: 'block',
-            position: 'fixed',
-            bottom: isMobile ? '80px' : '80px', // Positioned higher to leave room for the button
+        <div 
+          className="fixed z-[999]"
+          style={{
+            bottom: isMobile ? '80px' : '80px',
             right: isMobile ? '5px' : '20px',
             width: isMobile ? '90vw' : '350px',
             height: '500px',
             maxHeight: isMobile ? '70vh' : '500px',
-            borderRadius: '12px',
-            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
-            zIndex: 999
+            willChange: 'transform', // Helps with performance
+            transform: 'translateZ(0)', // Forces GPU acceleration
           }}
-        />
+        >
+          <elevenlabs-convai 
+            agent-id="yZ98Wmjs6VqYsGE5F07R"
+            style={{ 
+              display: 'block',
+              width: '100%',
+              height: '100%',
+              borderRadius: '12px',
+              boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)',
+              overflow: 'hidden',
+              willChange: 'transform', // Helps with performance
+              transform: 'translateZ(0)', // Forces GPU acceleration
+              backfaceVisibility: 'hidden', // Reduces flickering
+            }}
+          />
+        </div>
       )}
       
-      <Button
-        onClick={toggleWidget}
-        variant="divine"
-        size="default"
-        className="fixed bottom-4 right-4 rounded-full shadow-lg z-[1000] transition-all duration-300"
-        aria-label="Toggle divine chat"
-      >
-        <MessageCircle className="h-6 w-6 mr-2" />
-        <span className="text-white font-semibold animate-pulse">LIVE</span>
-      </Button>
+      <div className="fixed bottom-4 right-4 z-[1000]" style={{ willChange: 'transform', transform: 'translateZ(0)' }}>
+        <Button
+          onClick={toggleWidget}
+          variant="divine"
+          size="default"
+          className="rounded-full shadow-lg transition-all duration-300"
+          aria-label="Toggle divine chat"
+        >
+          <MessageCircle className="h-6 w-6 mr-2" />
+          <span className="text-white font-semibold animate-pulse">LIVE</span>
+        </Button>
+      </div>
     </>
   );
 };
