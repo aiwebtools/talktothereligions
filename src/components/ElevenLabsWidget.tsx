@@ -27,22 +27,20 @@ const ElevenLabsWidget: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const toggleWidget = () => {
+    const widget = document.querySelector('elevenlabs-convai');
+    if (widget) {
+      const currentDisplay = window.getComputedStyle(widget).display;
+      (widget as HTMLElement).style.display = currentDisplay === 'none' ? 'block' : 'none';
+    }
+  };
+
   return (
     <div className="fixed bottom-5 right-5 z-50">
       <div className="relative">
         <button 
           className="bg-resurrection-primary hover:bg-resurrection-accent text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
-          onClick={() => {
-            const widget = document.querySelector('elevenlabs-convai');
-            if (widget) {
-              // Toggle the visibility of the widget
-              if (widget.style.display === 'none') {
-                widget.style.display = 'block';
-              } else {
-                widget.style.display = 'none';
-              }
-            }
-          }}
+          onClick={toggleWidget}
         >
           <Sparkles className="h-6 w-6 animate-pulse" />
         </button>
