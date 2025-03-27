@@ -1,6 +1,5 @@
 
 import React, { useEffect } from 'react';
-import { Sparkles } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 declare global {
@@ -30,34 +29,14 @@ const ElevenLabsWidget: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const toggleWidget = () => {
-    const widget = document.querySelector('elevenlabs-convai');
-    if (widget) {
-      const currentDisplay = window.getComputedStyle(widget).display;
-      (widget as HTMLElement).style.display = currentDisplay === 'none' ? 'block' : 'none';
-    }
-  };
-
   return (
-    <div className="fixed bottom-5 right-5 z-[1000]">
-      <div className="relative">
-        <button 
-          className="bg-resurrection-primary hover:bg-resurrection-accent text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
-          onClick={toggleWidget}
-        >
-          <Sparkles className="h-6 w-6 animate-pulse" />
-        </button>
-        <div className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-          1
-        </div>
-      </div>
-      
+    <div className="fixed bottom-5 right-5 z-[1000]">      
       <elevenlabs-convai 
         agent-id="yZ98Wmjs6VqYsGE5F07R"
         style={{ 
-          display: 'none',
+          display: 'block', // Always visible
           position: 'fixed',
-          bottom: isMobile ? '80px' : '80px',
+          bottom: isMobile ? '20px' : '20px',
           right: isMobile ? '5px' : '20px',
           width: isMobile ? '90vw' : '350px',
           height: '500px',
