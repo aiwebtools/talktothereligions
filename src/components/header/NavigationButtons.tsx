@@ -22,7 +22,7 @@ const NavigationButtons: React.FC<NavigationButtonsProps> = ({ handleHomeClick }
         )}
       >
         <a 
-          href="https://chat.openai.com/g/g-4rHRo0Ppq-talk-to-the-gods-gpt"
+          href="https://chatgpt.com/g/g-KrXujWZPM-talk-to-your-god-gpt"
           target="_blank"
           rel="noopener noreferrer"
           title="Use Talk to the Gods GPT"
