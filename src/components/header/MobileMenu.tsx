@@ -33,7 +33,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ handleHomeClick }) => {
       >
         <DropdownMenuItem asChild className="bg-gradient-to-r from-resurrection-primary to-resurrection-accent hover:from-resurrection-accent hover:to-resurrection-primary text-white font-medium">
           <a 
-            href="https://chat.openai.com/g/g-4rHRo0Ppq-talk-to-the-gods-gpt" 
+            href="https://chatgpt.com/g/g-KrXujWZPM-talk-to-your-god-gpt" 
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-between w-full"
