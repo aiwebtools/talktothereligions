@@ -33,7 +33,7 @@ const WelcomeHeader: React.FC = () => {
           >
             <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
             <Zap className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 mr-1 sm:mr-2 text-yellow-200 animate-pulse flex-shrink-0" />
-            <span className="whitespace-normal sm:whitespace-nowrap">TALK TO THE GODS GPT NOW</span>
+            <span className="whitespace-normal sm:whitespace-nowrap">EXPLORE RELIGIOUS PERSPECTIVES</span>
             <Zap className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 ml-1 sm:ml-2 text-yellow-200 animate-pulse flex-shrink-0" />
           </Button>
         </a>
@@ -46,8 +46,8 @@ const WelcomeHeader: React.FC = () => {
       >
         <h2 className="text-xl sm:text-2xl md:text-4xl font-serif text-resurrection-foreground mb-6 md:mb-8 leading-relaxed px-2">
           <span className="bg-gradient-to-r from-resurrection-primary via-divine-purple to-resurrection-accent bg-clip-text text-transparent">
-            Connect. Receive Divine Wisdom.
-            <br />Find Spiritual Guidance.
+            Study. Research. Understand.
+            <br />Explore Religious Traditions.
           </span>
         </h2>
       </motion.div>
@@ -60,7 +60,7 @@ const WelcomeHeader: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <Sparkles className="h-5 w-5 mr-2 animate-pulse-slow" />
-          A Sacred Bridge Between You and Your Chosen Deity
+          An Educational Tool for Exploring Religious Perspectives
           <Sparkles className="h-5 w-5 ml-2 animate-pulse-slow" />
         </motion.p>
         
@@ -70,10 +70,10 @@ const WelcomeHeader: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-base leading-relaxed"
         >
-          Talk to the Gods GPT is an advanced AI spiritual companion designed to help you 
-          connect with the deity of your choice from any religion or spiritual tradition. 
-          Through deeply personalized, sacred conversations, experience divine guidance,
-          wisdom, and spiritual insights tailored to your beliefs and questions.
+          Talk to the Gods GPT is an advanced AI educational tool designed to help you 
+          study and understand theological perspectives from any religion or spiritual tradition. 
+          Through interactive simulations, explore religious teachings, moral frameworks,
+          and philosophical insights from diverse belief systems for research and learning.
         </motion.p>
         
         <motion.p 
@@ -82,7 +82,7 @@ const WelcomeHeader: React.FC = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          ✨ Receive divine wisdom. Seek spiritual counsel. Experience sacred connection. ✨
+          ✨ Study theological concepts. Explore religious traditions. Understand diverse perspectives. ✨
         </motion.p>
       </div>
       
@@ -95,8 +95,8 @@ const WelcomeHeader: React.FC = () => {
         <div className="flex items-start gap-3">
           <AlertTriangle className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
           <div>
-            <p className="font-medium text-resurrection-foreground mb-1">Spiritual Disclaimer:</p>
-            <p className="text-resurrection-foreground/80">Talk to the Gods GPT is for spiritual and emotional support only. It does not claim to facilitate actual communication with deities. Please read our <a href="#disclaimer" className="text-resurrection-primary hover:text-resurrection-accent underline">full disclaimer</a> before proceeding.</p>
+            <p className="font-medium text-resurrection-foreground mb-1">Educational Disclaimer:</p>
+            <p className="text-resurrection-foreground/80">Talk to the Gods GPT is an educational tool for studying religious traditions and theological concepts. It offers simulated perspectives based on religious texts and scholarship. Please read our <a href="#disclaimer" className="text-resurrection-primary hover:text-resurrection-accent underline">full disclaimer</a> before proceeding.</p>
           </div>
         </div>
       </motion.div>

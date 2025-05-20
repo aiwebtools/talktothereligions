@@ -24,13 +24,13 @@ const Index: React.FC = () => {
 
   // Update the page title to better reflect the tool's name
   useEffect(() => {
-    document.title = "Talk to the Gods | Divine Communication Simulator";
+    document.title = "Talk to the Gods | Religious Studies Simulator";
   }, []);
   
   const handleAgree = () => {
     setHasAgreed(true);
     toast({
-      title: "Welcome to the Divine Experience",
+      title: "Welcome to the Religious Studies Experience",
       description: "Thank you for acknowledging our research disclosure.",
       duration: 5000,
     });
@@ -52,7 +52,7 @@ const Index: React.FC = () => {
             <InfoIcon className="h-4 w-4 text-resurrection-accent mr-2" />
             <p className="text-xs text-center text-resurrection-foreground/80">
               This tool is provided for educational, research, and informational purposes only. 
-              All responses are AI-generated interpretations of religious concepts and should not be considered authentic divine communications.
+              All responses are AI-generated interpretations of religious concepts designed to aid in religious studies and understanding diverse traditions.
             </p>
           </motion.div>
           <MainContent />

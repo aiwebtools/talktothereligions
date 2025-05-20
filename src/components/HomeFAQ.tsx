@@ -9,23 +9,23 @@ const HomeFAQ: React.FC = () => {
   const faqs = [
     {
       question: "What is Talk to the Gods?",
-      answer: "Talk to the Gods is an educational tool designed to help you explore how different deities might respond to your questions based on their attributed teachings and characteristics. It offers an immersive experience that simulates divine guidance from various religious and spiritual traditions."
+      answer: "Talk to the Gods is an educational tool designed to help you explore religious perspectives and theological concepts from different traditions through an interactive, simulated conversation format. It offers an immersive learning experience that helps you understand various religious viewpoints based on their documented teachings and historical records."
     },
     {
       question: "How does it work?",
-      answer: "You select a deity from any religion or spiritual tradition, ask your questions, and our AI creates responses that align with the documented teachings, scriptures, and traditional understandings associated with that spiritual figure."
+      answer: "You select a religious figure from any tradition, ask questions about their teachings or philosophy, and our AI creates responses based on documented religious texts, scholarly interpretations, and historical understanding associated with that tradition. This approach allows for comparative religious study in an interactive format."
     },
     {
-      question: "Is this real communication with deities?",
-      answer: "No. This is an AI-driven simulation for educational purposes. It's important to understand that this is not a literal channel to supernatural entities, but rather a tool for contemplation, learning, and personal reflection."
+      question: "Is this real communication with religious figures?",
+      answer: "No. This is an AI-driven educational simulation for research and learning purposes. It's important to understand that this is not a spiritual or mystical tool, but rather a technological approach to exploring and understanding religious teachings and perspectives."
     },
     {
-      question: "Which spiritual figures can I connect with?",
-      answer: "The system supports deities and figures from all major world religions including Christianity, Islam, Judaism, Hinduism, Buddhism, and many others, as well as figures from ancient pantheons and indigenous traditions."
+      question: "Which religious traditions can I explore?",
+      answer: "The system supports figures from all major world religions including Christianity, Islam, Judaism, Hinduism, Buddhism, and many others, as well as figures from ancient pantheons and indigenous traditions, allowing for comprehensive comparative religious studies."
     },
     {
       question: "How accurate are the responses?",
-      answer: "The AI strives to provide responses based on documented teachings, but represents an interpretation of available religious and spiritual texts. For official religious guidance, please consult with recognized religious authorities."
+      answer: "The AI strives to provide responses based on documented religious texts and scholarly interpretations, but represents a synthesis of available religious and academic sources. For authoritative religious guidance, please consult with recognized religious authorities and primary texts."
     }
   ];
 
@@ -80,7 +80,7 @@ const HomeFAQ: React.FC = () => {
                 "text-xs md:text-sm px-4 h-9"
               )}
             >
-              Begin Your Divine Connection
+              Begin Your Religious Studies
               <ExternalLink className="ml-2 h-3 w-3 md:h-4 md:w-4" />
             </Button>
           </a>

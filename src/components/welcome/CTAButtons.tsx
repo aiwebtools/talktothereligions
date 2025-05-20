@@ -40,7 +40,7 @@ const CTAButtons: React.FC<CTAButtonsProps> = ({ handleBegin }) => {
             <span className="flex items-center justify-center relative z-10">
               <Sparkles className="h-5 w-5 mr-2 text-white/90 group-hover:text-white animate-pulse-slow" />
               <span className="font-serif tracking-wide text-lg relative">
-                Begin Your Divine Connection
+                Start Religious Studies
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white/80 group-hover:w-full transition-all duration-300"></span>
               </span>
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />

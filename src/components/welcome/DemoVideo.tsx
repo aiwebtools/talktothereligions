@@ -10,7 +10,7 @@ const DemoVideo: React.FC = () => {
       <div className="flex items-center justify-center gap-2 mb-3">
         <Youtube className="text-resurrection-accent" size={20} />
         <h4 className="font-medium text-resurrection-foreground/80">
-          See Talk to the Gods GPT in Action
+          See the Religious Studies Tool in Action
         </h4>
       </div>
       <div className={cn(
@@ -27,7 +27,7 @@ const DemoVideo: React.FC = () => {
         ></iframe>
       </div>
       
-      {/* New Educational Value Section */}
+      {/* Educational Value Section */}
       <motion.div 
         className="mt-6 mb-4 p-4 bg-resurrection-primary/5 border border-resurrection-primary/20 rounded-lg text-resurrection-foreground/90"
         initial={{ opacity: 0, y: 10 }}
@@ -36,7 +36,7 @@ const DemoVideo: React.FC = () => {
       >
         <h5 className="flex items-center justify-center mb-3 font-serif text-lg text-resurrection-primary">
           <BookOpen className="h-5 w-5 mr-2" />
-          Educational & Research Value
+          Academic & Research Value
           <GraduationCap className="h-5 w-5 ml-2" />
         </h5>
         
@@ -45,7 +45,7 @@ const DemoVideo: React.FC = () => {
             <Scroll className="h-4 w-4 text-resurrection-primary mt-0.5 flex-shrink-0" />
             <div>
               <span className="font-medium">Religious Studies</span>
-              <p className="mt-1 text-resurrection-foreground/80">Explore theological concepts and divine archetypes across different faith traditions.</p>
+              <p className="mt-1 text-resurrection-foreground/80">Study theological concepts and compare different religious perspectives in an interactive format.</p>
             </div>
           </div>
           
@@ -53,15 +53,15 @@ const DemoVideo: React.FC = () => {
             <GraduationCap className="h-4 w-4 text-resurrection-primary mt-0.5 flex-shrink-0" />
             <div>
               <span className="font-medium">Academic Research</span>
-              <p className="mt-1 text-resurrection-foreground/80">Compare divine responses to similar inquiries across different religious contexts.</p>
+              <p className="mt-1 text-resurrection-foreground/80">Analyze how different religious traditions approach similar philosophical questions.</p>
             </div>
           </div>
           
           <div className="flex items-start gap-2 p-3 bg-resurrection-primary/10 rounded-md">
             <BookOpen className="h-4 w-4 text-resurrection-primary mt-0.5 flex-shrink-0" />
             <div>
-              <span className="font-medium">Spiritual Education</span>
-              <p className="mt-1 text-resurrection-foreground/80">Understand how different deities might approach moral and spiritual questions.</p>
+              <span className="font-medium">Comparative Religion</span>
+              <p className="mt-1 text-resurrection-foreground/80">Understand similarities and differences between various religious and ethical frameworks.</p>
             </div>
           </div>
         </div>

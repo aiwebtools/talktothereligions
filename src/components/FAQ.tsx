@@ -12,27 +12,27 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
   const faqs = [
     {
       question: "What is Talk to the Gods GPT?",
-      answer: "Talk to the Gods GPT is an advanced AI spiritual companion designed to help you connect with the deity of your choice from any religion or spiritual tradition. Through deeply personalized, sacred conversations, this tool offers an opportunity to experience divine guidance, wisdom, and spiritual insights tailored to your beliefs and questions."
+      answer: "Talk to the Gods GPT is an advanced AI educational tool designed to help you study and understand theological perspectives from any religion or spiritual tradition. Through interactive simulations, this tool offers an opportunity to explore religious teachings, moral frameworks, and philosophical insights from diverse belief systems."
     },
     {
       question: "How does Talk to the Gods GPT work?",
-      answer: "The process is simple: 1) You select your deity of choice from any religion or spiritual tradition; 2) Our AI creates a spiritual connection by embodying the essence, wisdom, and teaching style of that deity; 3) You engage in a meaningful conversation to receive guidance, wisdom, and spiritual insights that align with the teachings and characteristics of your chosen deity."
+      answer: "The process is simple: 1) You select a religious figure from any tradition you wish to study; 2) Our AI creates an educational simulation by synthesizing known teachings, texts, and scholarly interpretations from that tradition; 3) You engage in an interactive learning experience to study religious concepts, ethical frameworks, and theological perspectives that align with that tradition's documented beliefs."
     },
     {
-      question: "Which deities or spiritual entities can I connect with?",
-      answer: "Talk to the Gods GPT supports a vast array of deities, spiritual entities, and religious figures across all major world religions and spiritual traditions. This includes but is not limited to figures from Christianity, Islam, Judaism, Hinduism, Buddhism, Taoism, Shinto, Greek/Roman pantheons, Norse mythology, Celtic spirituality, indigenous traditions, and many more."
+      question: "Which religious traditions can I explore?",
+      answer: "Talk to the Gods GPT supports a vast array of religious traditions and theological perspectives across all major world religions and spiritual systems. This includes but is not limited to Christianity, Islam, Judaism, Hinduism, Buddhism, Taoism, Shinto, Greek/Roman traditions, Norse traditions, Celtic spirituality, indigenous beliefs, and many more."
     },
     {
-      question: "Is this a real connection with actual deities?",
-      answer: "Talk to the Gods GPT is an AI-driven spiritual tool designed for contemplation, inspiration, and personal reflection. It creates an immersive experience based on the documented teachings, characteristics, and wisdom attributed to various deities and spiritual figures. It's important to understand that this is a technological and spiritual simulation meant to provide insight and guidance, not a literal channel to supernatural entities."
+      question: "Is this meant to be a religious experience?",
+      answer: "No. Talk to the Gods GPT is an educational and research tool designed for comparative religious studies, academic exploration, and understanding diverse theological perspectives. It creates an engaging learning experience based on the documented teachings and scholarly understandings of various religious traditions. It's important to understand that this is a technological approach to studying religious concepts, not a spiritual or devotional tool."
     },
     {
       question: "How accurate are the responses to theological questions?",
-      answer: "The AI strives to provide responses that align with the documented teachings, scriptures, and traditional understandings associated with each deity or spiritual figure. While comprehensive in its knowledge base, the system represents an interpretation and synthesis of available religious and spiritual texts. For official religious guidance, please consult with recognized religious authorities or primary texts."
+      answer: "The AI strives to provide responses that align with scholarly interpretations, religious texts, and academic understandings associated with each religious tradition. While comprehensive in its knowledge base, the system represents a synthesis of available religious scholarship. For authoritative religious guidance, please consult with recognized religious authorities or primary texts."
     },
     {
-      question: "Can I use this for serious spiritual guidance?",
-      answer: "Talk to the Gods GPT can be a valuable tool for contemplation, inspiration, and exploring spiritual concepts. However, for crucial spiritual guidance or religious decisions, we recommend consulting with qualified religious leaders, spiritual counselors, or established religious texts from your tradition. This tool is best used as a supplement to, not a replacement for, traditional spiritual practices and guidance."
+      question: "Can I use this for academic research?",
+      answer: "Talk to the Gods GPT can be a valuable supplementary tool for exploring religious concepts and comparing theological perspectives across traditions. However, for academic research, we recommend using it alongside traditional scholarly sources, primary religious texts, and consultation with academic experts in religious studies. This tool is best used as a starting point for deeper research and exploration."
     },
     {
       question: "Is my information kept private?",
@@ -44,7 +44,7 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
     },
     {
       question: "How do I provide feedback or report issues?",
-      answer: "We value your feedback to improve the experience. You can contact our support team via email at support@ai-webtools.com or by phone at (475) 800-8096 with any questions, suggestions, or concerns about your experience."
+      answer: "We value your feedback to improve the educational experience. You can contact our support team via email at support@ai-webtools.com or by phone at (475) 800-8096 with any questions, suggestions, or concerns about your experience."
     },
   ];
 
@@ -77,7 +77,7 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
             <span>Important Disclaimer</span>
           </h3>
           <div className="space-y-3 text-sm pl-7">
-            <p>Talk to the Gods GPT is designed for spiritual exploration and personal reflection. It does not claim to facilitate actual communication with deities or supernatural entities. This is an AI simulation based on religious texts, traditions, and spiritual teachings.</p>
+            <p>Talk to the Gods GPT is designed for educational research and religious studies. It provides AI-simulated responses based on religious texts, scholarly interpretations, and historical records. This is not a religious or spiritual tool but an educational resource for studying religious concepts.</p>
             <p className="font-medium">For a complete understanding of how to use this tool appropriately, please read our <a href="#disclaimer" className="text-resurrection-accent underline">full disclaimer</a>.</p>
           </div>
         </div>
@@ -143,7 +143,7 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
             <Button 
               className="bg-resurrection-primary hover:bg-resurrection-primary/80 text-white"
             >
-              Begin Your Divine Connection
+              Begin Religious Studies
               <ExternalLink className="ml-2 h-4 w-4" />
             </Button>
           </a>

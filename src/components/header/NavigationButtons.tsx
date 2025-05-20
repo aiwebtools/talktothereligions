@@ -25,11 +25,11 @@ const NavigationButtons: React.FC<NavigationButtonsProps> = ({ handleHomeClick }
           href="https://chatgpt.com/g/g-KrXujWZPM-talk-to-your-god-gpt"
           target="_blank"
           rel="noopener noreferrer"
-          title="Use Talk to the Gods GPT"
+          title="Access Religious Studies Tool"
           className="flex items-center gap-2"
         >
           <Sparkles className="h-3 w-3 md:h-4 md:w-4 text-white/90" />
-          <span className="text-xs md:text-sm text-white">USE TALK TO THE GODS GPT NOW</span>
+          <span className="text-xs md:text-sm text-white">EXPLORE RELIGIOUS PERSPECTIVES</span>
         </a>
       </Button>
       

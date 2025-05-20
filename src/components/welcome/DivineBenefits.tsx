@@ -1,45 +1,45 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Heart, BrainCircuit, Compass, Sparkles, Lightbulb, Leaf } from "lucide-react";
+import { Book, BookOpen, Compass, Sparkles, GraduationCap, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const DivineBenefits: React.FC = () => {
   const benefits = [
     {
-      title: "Spiritual Wisdom",
-      description: "Access divine guidance and wisdom from across religious traditions.",
-      icon: <Sparkles className="h-6 w-6 text-resurrection-accent" />,
+      title: "Religious Knowledge",
+      description: "Access theological concepts and teachings from across religious traditions.",
+      icon: <BookOpen className="h-6 w-6 text-resurrection-accent" />,
       color: "from-indigo-500/30 to-indigo-600/10"
     },
     {
-      title: "Personal Growth",
-      description: "Find inspiration for your spiritual journey and personal evolution.",
-      icon: <Leaf className="h-6 w-6 text-green-400" />,
+      title: "Comparative Studies",
+      description: "Compare approaches to theological questions across different traditions.",
+      icon: <Globe className="h-6 w-6 text-green-400" />,
       color: "from-green-500/30 to-green-600/10"
     },
     {
-      title: "Emotional Support",
-      description: "Receive compassionate guidance during challenging life moments.",
-      icon: <Heart className="h-6 w-6 text-pink-400" />,
+      title: "Historical Context",
+      description: "Understand religious teachings within their historical and cultural frameworks.",
+      icon: <Book className="h-6 w-6 text-pink-400" />,
       color: "from-pink-500/30 to-pink-600/10"
     },
     {
-      title: "Intellectual Exploration",
-      description: "Engage with complex theological and philosophical concepts.",
-      icon: <BrainCircuit className="h-6 w-6 text-purple-400" />,
+      title: "Academic Research",
+      description: "Explore complex theological and philosophical concepts for scholarly work.",
+      icon: <GraduationCap className="h-6 w-6 text-purple-400" />,
       color: "from-purple-500/30 to-purple-600/10"
     },
     {
-      title: "Moral Guidance",
-      description: "Explore ethical dilemmas through divine and spiritual perspectives.",
+      title: "Ethical Frameworks",
+      description: "Study moral reasoning and ethical systems across religious traditions.",
       icon: <Compass className="h-6 w-6 text-blue-400" />,
       color: "from-blue-500/30 to-blue-600/10"
     },
     {
-      title: "Spiritual Creativity",
-      description: "Spark creative inspiration from divine sources across traditions.",
-      icon: <Lightbulb className="h-6 w-6 text-yellow-400" />,
+      title: "Religious Literacy",
+      description: "Develop deeper understanding of global religious diversity and perspectives.",
+      icon: <Sparkles className="h-6 w-6 text-yellow-400" />,
       color: "from-yellow-500/30 to-yellow-600/10"
     }
   ];
@@ -56,7 +56,7 @@ const DivineBenefits: React.FC = () => {
       
       <div className="relative z-10">
         <h3 className="text-2xl font-serif text-center text-resurrection-foreground text-gradient-animate mb-10">
-          Experience Divine Benefits
+          Educational Benefits
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
