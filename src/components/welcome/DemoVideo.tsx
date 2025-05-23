@@ -20,7 +20,7 @@ const DemoVideo: React.FC = () => {
       )}>
         <iframe 
           className="absolute top-0 left-0 w-full h-full"
-          src="https://www.youtube.com/embed/Yw_z9NYHlPA?si=YZp3h5AY3KFgH7n4&amp;autoplay=1&amp;mute=0&amp;controls=1&amp;enablejsapi=1&amp;modestbranding=1&amp;rel=0&amp;hd=1&amp;vq=hd1080&amp;showinfo=0" 
+          src="https://www.youtube.com/embed/xoUdjZDgplw?si=YZp3h5AY3KFgH7n4&amp;autoplay=1&amp;mute=0&amp;controls=1&amp;enablejsapi=1&amp;modestbranding=1&amp;rel=0&amp;hd=1&amp;vq=hd1080&amp;showinfo=0" 
           title="Talk to the Gods GPT Demo" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
           allowFullScreen
