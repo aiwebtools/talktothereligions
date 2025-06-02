@@ -64,18 +64,50 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				resurrection: {
-					primary: '#9b87f5',
-					secondary: '#8B5CF6',
-					accent: '#EC4899',
-					muted: '#1E293B',
-					background: '#0F172A',
-					foreground: '#F8FAFC',
+					primary: '#E935C1',
+					secondary: '#7C3AED',
+					accent: '#F59E0B',
+					muted: '#1E1B4B',
+					background: '#0C0A1E',
+					foreground: '#FEFEFE',
 				},
 				divine: {
-					purple: '#9b87f5',
-					'purple-dark': '#7E69AB',
-					'purple-light': '#D6BCFA',
-					accent: '#EC4899',
+					purple: '#A855F7',
+					'purple-dark': '#6B21A8',
+					'purple-light': '#DDD6FE',
+					accent: '#F59E0B',
+					cosmic: '#1E1B4B',
+					mystical: '#312E81',
+					ethereal: '#C084FC',
+					celestial: '#FBBF24',
+					nebula: '#EC4899',
+					starlight: '#F3E8FF'
+				},
+				cosmic: {
+					50: '#F8FAFF',
+					100: '#EEF2FF',
+					200: '#E0E7FF',
+					300: '#C7D2FE',
+					400: '#A78BFA',
+					500: '#8B5CF6',
+					600: '#7C3AED',
+					700: '#6D28D9',
+					800: '#5B21B6',
+					900: '#4C1D95',
+					950: '#2E1065'
+				},
+				gold: {
+					50: '#FFFBEB',
+					100: '#FEF3C7',
+					200: '#FDE68A',
+					300: '#FCD34D',
+					400: '#FBBF24',
+					500: '#F59E0B',
+					600: '#D97706',
+					700: '#B45309',
+					800: '#92400E',
+					900: '#78350F',
+					950: '#451A03'
 				}
 			},
 			borderRadius: {
@@ -229,7 +261,10 @@ export default {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-				'text-gradient': 'linear-gradient(90deg, #EC4899, #7B5CF6, #3B82F6)',
+				'text-gradient': 'linear-gradient(90deg, #F59E0B, #E935C1, #7C3AED, #A855F7)',
+				'cosmic-gradient': 'linear-gradient(135deg, #0C0A1E 0%, #1E1B4B 25%, #312E81 50%, #4C1D95 75%, #2E1065 100%)',
+				'divine-gradient': 'radial-gradient(ellipse at center, rgba(168, 85, 247, 0.3) 0%, rgba(124, 58, 237, 0.2) 40%, rgba(12, 10, 30, 1) 100%)',
+				'aurora': 'linear-gradient(45deg, #E935C1, #F59E0B, #7C3AED, #A855F7, #EC4899)',
 			},
 			transitionDuration: {
 				'2000': '2000ms',

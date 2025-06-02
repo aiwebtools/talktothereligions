@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
@@ -6,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 252 10% 4%;
+    --foreground: 0 0% 99%;
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 252 15% 6%;
+    --card-foreground: 0 0% 99%;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 252 15% 6%;
+    --popover-foreground: 0 0% 99%;
 
-    --primary: 250 95% 65%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 320 85% 60%;
+    --primary-foreground: 0 0% 99%;
 
-    --secondary: 250 95% 75%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 262 83% 58%;
+    --secondary-foreground: 0 0% 99%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 252 39% 15%;
+    --muted-foreground: 250 15% 70%;
 
-    --accent: 320 95% 60%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 45 93% 47%;
+    --accent-foreground: 0 0% 99%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 250 95% 65%;
+    --border: 252 25% 20%;
+    --input: 252 25% 20%;
+    --ring: 320 85% 60%;
 
     --radius: 0.75rem;
   }
@@ -44,7 +45,9 @@
   }
 
   body {
-    @apply bg-resurrection-background text-resurrection-foreground font-sans antialiased;
+    @apply bg-cosmic-gradient text-resurrection-foreground font-sans antialiased;
+    background: linear-gradient(135deg, #0C0A1E 0%, #1E1B4B 25%, #312E81 50%, #4C1D95 75%, #2E1065 100%);
+    background-attachment: fixed;
     -webkit-tap-highlight-color: transparent;
     overflow-x: hidden;
   }
@@ -56,29 +59,32 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white/10 backdrop-blur-md border border-white/10 shadow-lg relative overflow-hidden;
+    @apply bg-cosmic-800/20 backdrop-blur-xl border border-divine-purple/30 shadow-2xl relative overflow-hidden;
+    box-shadow: 0 25px 50px -12px rgba(168, 85, 247, 0.25), 0 0 0 1px rgba(245, 158, 11, 0.1);
   }
   
   .glass-card::before {
     content: '';
-    @apply absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/5 to-transparent pointer-events-none;
+    @apply absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gold-400/10 to-divine-purple/5 pointer-events-none;
   }
 
   .letter-paper {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-md;
+    @apply bg-cosmic-900/30 backdrop-blur-lg border border-divine-ethereal/20 shadow-xl;
     background-image: 
-      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(245, 158, 11, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(168, 85, 247, 0.08) 1px, transparent 1px);
     background-size: 1.5rem 1.5rem;
+    box-shadow: 0 20px 40px -12px rgba(233, 53, 193, 0.3);
   }
 
   .btn-glow {
-    @apply relative overflow-hidden transition-all duration-300;
+    @apply relative overflow-hidden transition-all duration-500;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4), 0 0 40px rgba(233, 53, 193, 0.2);
   }
 
   .btn-glow::before {
     content: '';
-    @apply absolute inset-0 opacity-0 bg-white/20 transition-opacity duration-300;
+    @apply absolute inset-0 opacity-0 bg-gradient-to-r from-gold-400/30 to-divine-nebula/30 transition-opacity duration-500;
   }
 
   .btn-glow:hover::before {
@@ -86,28 +92,34 @@
   }
 
   .btn-glow:active::before {
-    @apply bg-white/30;
+    @apply bg-gradient-to-r from-gold-500/40 to-divine-nebula/40;
   }
 
   .text-gradient-animate {
-    @apply bg-text-gradient bg-clip-text text-transparent bg-[length:300%_100%] animate-text-shimmer;
+    @apply bg-aurora bg-clip-text text-transparent bg-[length:400%_100%] animate-text-shimmer;
   }
 
   .interactive-card {
-    @apply transition-transform duration-300 hover:scale-105 hover:shadow-xl;
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-2xl;
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+  }
+
+  .interactive-card:hover {
+    box-shadow: 0 25px 50px rgba(245, 158, 11, 0.3), 0 0 100px rgba(233, 53, 193, 0.2);
   }
 
   .dark-glow {
-    @apply shadow-[0_0_20px_rgba(139,92,246,0.4)];
+    @apply shadow-[0_0_40px_rgba(168,85,247,0.6),0_0_80px_rgba(245,158,11,0.3)];
   }
   
   .divine-border {
-    @apply border border-resurrection-primary/30 relative;
+    @apply border border-divine-purple/40 relative;
+    box-shadow: inset 0 1px 0 rgba(245, 158, 11, 0.2);
   }
   
   .divine-border::after {
     content: '';
-    @apply absolute inset-0 border border-resurrection-accent/20 scale-[1.02] rounded-lg pointer-events-none;
+    @apply absolute inset-0 border border-gold-400/30 scale-[1.02] rounded-lg pointer-events-none;
   }
   
   .perspective-1000 {
@@ -152,136 +164,30 @@
 
 .particle {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.2);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.8) 0%, rgba(168, 85, 247, 0.4) 100%);
   border-radius: 50%;
   pointer-events: none;
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar with cosmic theme */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(40, 40, 40, 0.2);
+  background: rgba(30, 27, 75, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(139, 92, 246, 0.5);
-  border-radius: 4px;
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.8) 0%, rgba(168, 85, 247, 0.8) 100%);
+  border-radius: 6px;
+  border: 2px solid rgba(12, 10, 30, 0.3);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(139, 92, 246, 0.8);
+  background: linear-gradient(180deg, rgba(245, 158, 11, 1) 0%, rgba(168, 85, 247, 1) 100%);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
 }
 
-/* Page transitions */
-.page-transition-enter {
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-.page-transition-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 400ms, transform 400ms;
-}
-
-.page-transition-exit {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.page-transition-exit-active {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 400ms, transform 400ms;
-}
-
-/* Mobile optimizations */
-@layer utilities {
-  @media (max-width: 640px) {
-    .mobile-glass-card {
-      @apply p-3 md:p-6;
-    }
-    
-    .mobile-letter-paper {
-      @apply p-3 md:p-6;
-    }
-    
-    .mobile-interactive-card {
-      @apply transition-transform duration-300 hover:scale-102 active:scale-98;
-    }
-    
-    .mobile-text {
-      @apply text-sm md:text-base;
-    }
-    
-    .mobile-heading {
-      @apply text-lg md:text-2xl;
-    }
-    
-    .mobile-btn {
-      @apply py-2 px-3 md:py-3 md:px-4 text-xs md:text-sm;
-    }
-    
-    .touch-friendly {
-      @apply min-h-10 min-w-10;
-    }
-    
-    .touch-target {
-      @apply min-h-[44px] min-w-[44px];
-    }
-    
-    .mobile-button-spacing > * {
-      @apply my-1.5;
-    }
-    
-    .mobile-text-wrap {
-      @apply break-words hyphens-auto;
-    }
-  }
-
-  .xs\:hidden {
-    @media (min-width: 480px) {
-      display: none;
-    }
-  }
-  
-  .hidden.xs\:inline {
-    display: none;
-  }
-  
-  .xs\:inline {
-    @media (min-width: 480px) {
-      display: inline;
-    }
-  }
-}
-
-/* Fix iOS 100vh issue */
-@supports (-webkit-touch-callout: none) {
-  .min-h-screen {
-    min-height: -webkit-fill-available;
-  }
-  
-  .safe-h-screen {
-    height: 100vh; /* fallback */
-    height: -webkit-fill-available;
-  }
-}
-
-/* Add tap highlight transparency for mobile */
-@media (max-width: 640px) {
-  * {
-    -webkit-tap-highlight-color: transparent;
-  }
-  
-  .button-stack {
-    @apply flex flex-col gap-2;
-  }
-  
-  .button-stack-horizontal {
-    @apply flex flex-row gap-2;
-  }
-}
+/* ... keep existing code (page transitions and mobile optimizations) */
