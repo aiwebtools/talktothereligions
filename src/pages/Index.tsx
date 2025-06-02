@@ -4,14 +4,12 @@ import { GodsProvider } from "@/context/GodsContext";
 import Header from "@/components/Header";
 import MainContent from "@/components/layout/MainContent";
 import Particles from "@/components/Particles";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { InfoIcon, BookOpen } from "lucide-react";
 import AgreementPopup from "@/components/AgreementPopup";
-import { useToast } from "@/hooks/use-toast";
 
 const Index: React.FC = () => {
   const [hasAgreed, setHasAgreed] = useState(false);
-  const { toast } = useToast();
   
   // Check if user has already agreed on component mount
   useEffect(() => {
@@ -28,11 +26,6 @@ const Index: React.FC = () => {
   
   const handleAgree = () => {
     setHasAgreed(true);
-    toast({
-      title: "Welcome to the Religious Studies Experience",
-      description: "Thank you for acknowledging our research disclosure.",
-      duration: 5000,
-    });
   };
 
   return (
@@ -43,31 +36,39 @@ const Index: React.FC = () => {
         <div className="min-h-screen flex flex-col relative z-10">
           <Header />
           
-          {/* Educational Purpose Disclaimer */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mx-auto w-full max-w-6xl px-4 py-3 bg-resurrection-primary/10 border border-resurrection-primary/30 rounded-lg flex items-center justify-center mt-1 mb-1"
-          >
-            <BookOpen className="h-4 w-4 text-resurrection-accent mr-2 flex-shrink-0" />
-            <p className="text-xs text-center text-resurrection-foreground/90 font-medium">
-              <span className="text-resurrection-primary">Educational Tool:</span> This platform is designed for informational, educational, and research purposes only - 
-              to study and understand diverse religious traditions through interactive AI simulations.
-            </p>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mx-auto w-full max-w-6xl px-4 py-2 bg-resurrection-primary/5 border border-resurrection-primary/20 rounded-lg flex items-center justify-center mt-1 mb-1"
-          >
-            <InfoIcon className="h-4 w-4 text-resurrection-accent mr-2" />
-            <p className="text-xs text-center text-resurrection-foreground/80">
-              All responses are AI-generated interpretations of religious concepts designed to aid in religious studies and understanding diverse traditions.
-            </p>
-          </motion.div>
+          {/* Educational Purpose Disclaimer - Only show after agreement */}
+          <AnimatePresence>
+            {hasAgreed && (
+              <>
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="mx-auto w-full max-w-6xl px-4 py-3 bg-resurrection-primary/10 border border-resurrection-primary/30 rounded-lg flex items-center justify-center mt-1 mb-1"
+                >
+                  <BookOpen className="h-4 w-4 text-resurrection-accent mr-2 flex-shrink-0" />
+                  <p className="text-xs text-center text-resurrection-foreground/90 font-medium">
+                    <span className="text-resurrection-primary">Educational Tool:</span> This platform is designed for informational, educational, and research purposes only - 
+                    to study and understand diverse religious traditions through interactive AI simulations.
+                  </p>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="mx-auto w-full max-w-6xl px-4 py-2 bg-resurrection-primary/5 border border-resurrection-primary/20 rounded-lg flex items-center justify-center mt-1 mb-1"
+                >
+                  <InfoIcon className="h-4 w-4 text-resurrection-accent mr-2" />
+                  <p className="text-xs text-center text-resurrection-foreground/80">
+                    All responses are AI-generated interpretations of religious concepts designed to aid in religious studies and understanding diverse traditions.
+                  </p>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
           
           <MainContent />
         </div>
