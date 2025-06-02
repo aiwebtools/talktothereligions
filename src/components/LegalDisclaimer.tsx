@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -39,7 +38,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({ onClose }) => {
               1. Purpose and Educational Nature
             </h3>
             <p className="leading-relaxed">
-              Talk to the Gods GPT is an AI-powered educational tool designed for religious studies, academic research, and exploration of theological concepts through simulated conversations based on user-selected religious traditions. This service is strictly for educational purposes, comparative religious studies, and research. It does not claim to represent actual religious authorities or divine entities.
+              Talk to the Gods GPT is an AI-powered educational tool designed for religious studies, academic research, and exploration of theological concepts through simulated conversations based on user-selected religious traditions. This service is strictly for informational, educational, and research purposes only. It does not claim to represent actual religious authorities or divine entities.
             </p>
           </div>
           
@@ -132,7 +131,7 @@ const LegalDisclaimer: React.FC<LegalDisclaimerProps> = ({ onClose }) => {
               9. Agreement to Terms
             </h3>
             <p className="leading-relaxed">
-              By using Talk to the Gods GPT, you acknowledge and agree to the terms outlined in this disclaimer. If you do not agree with these terms, please discontinue use immediately.
+              By using Talk to the Gods GPT, you acknowledge and agree to the terms outlined in this disclaimer. For complete terms and conditions, please visit our <a href="https://aiwebtools.lovable.app/disclaimers" target="_blank" rel="noopener noreferrer" className="text-resurrection-primary hover:underline">Terms of Service</a>. If you do not agree with these terms, please discontinue use immediately.
             </p>
           </div>
         </div>

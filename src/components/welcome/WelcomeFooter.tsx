@@ -82,7 +82,7 @@ const WelcomeFooter: React.FC = () => {
           <span className="group-hover:underline">Privacy Policy</span>
         </a>
         <a 
-          href="https://aiwebtools.ai/terms-of-services" 
+          href="https://aiwebtools.lovable.app/disclaimers" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-1 md:gap-1.5 px-2 text-resurrection-primary hover:text-resurrection-accent transition-colors duration-300 group"
