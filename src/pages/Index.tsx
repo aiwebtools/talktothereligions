@@ -3,10 +3,11 @@ import React, { useEffect, useState } from "react";
 import { GodsProvider } from "@/context/GodsContext";
 import Header from "@/components/Header";
 import MainContent from "@/components/layout/MainContent";
-import Particles from "@/components/Particles";
 import { motion, AnimatePresence } from "framer-motion";
 import { InfoIcon, BookOpen } from "lucide-react";
 import AgreementPopup from "@/components/AgreementPopup";
+import DivineAuroraField from "@/components/effects/DivineAuroraField";
+import EnhancedParticles from "@/components/effects/EnhancedParticles";
 
 const Index: React.FC = () => {
   const [hasAgreed, setHasAgreed] = useState(false);
@@ -31,48 +32,82 @@ const Index: React.FC = () => {
   return (
     <GodsProvider>
       <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-cosmic-950 via-divine-cosmic to-cosmic-900">
-        {/* Cosmic overlay patterns */}
-        <div className="absolute inset-0 bg-divine-gradient opacity-60"></div>
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMSkiIHN0cm9rZT0icmdiYSgyNDUsIDE1OCwgMTEsIDAuMikiPjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iNTAiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjEwMCIvPjwvZz48L2c+PC9zdmc+')] opacity-30"></div>
+        {/* Enhanced cosmic background layers */}
+        <DivineAuroraField />
+        <EnhancedParticles />
         
-        {/* Aurora effect */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-resurrection-primary/20 to-divine-accent/20 rounded-full blur-3xl animate-pulse-slow"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-divine-accent/15 to-resurrection-secondary/15 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-conic from-resurrection-primary/10 via-divine-accent/10 to-resurrection-secondary/10 rounded-full blur-3xl animate-spin-slow"></div>
+        {/* Divine energy pulses */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-radial from-resurrection-primary/30 to-transparent rounded-full blur-3xl animate-pulse-slow"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-radial from-divine-accent/25 to-transparent rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-conic from-resurrection-primary/15 via-divine-accent/15 to-resurrection-secondary/15 rounded-full blur-3xl animate-spin-slow"></div>
+          
+          {/* Additional divine orbs */}
+          <div className="absolute top-1/6 right-1/3 w-48 h-48 bg-gradient-radial from-divine-purple/40 to-transparent rounded-full blur-2xl animate-float"></div>
+          <div className="absolute bottom-1/3 left-1/6 w-64 h-64 bg-gradient-radial from-divine-celestial/35 to-transparent rounded-full blur-2xl animate-float animation-delay-1000"></div>
         </div>
         
-        <Particles />
+        {/* Floating divine particles */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {Array.from({ length: 20 }).map((_, i) => (
+            <div 
+              key={i}
+              className="divine-particle absolute"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                width: `${2 + Math.random() * 4}px`,
+                height: `${2 + Math.random() * 4}px`,
+                color: ['#F59E0B', '#E935C1', '#A855F7', '#FFFFFF'][Math.floor(Math.random() * 4)],
+                animationDelay: `${Math.random() * 6}s`,
+                animationDuration: `${6 + Math.random() * 6}s`,
+              }}
+            />
+          ))}
+        </div>
+        
         <div className="min-h-screen flex flex-col relative z-10">
           <Header />
           
-          {/* Educational Purpose Disclaimer - Only show after agreement */}
+          {/* Educational Purpose Disclaimer - Enhanced version */}
           <AnimatePresence>
             {hasAgreed && (
               <>
                 <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="mx-auto w-full max-w-6xl px-4 py-3 bg-gradient-to-r from-resurrection-primary/15 to-divine-accent/10 border border-gold-400/40 rounded-xl flex items-center justify-center mt-1 mb-1 backdrop-blur-xl shadow-xl"
+                  initial={{ opacity: 0, y: -20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -20, scale: 0.9 }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: 0.3,
+                    type: "spring",
+                    stiffness: 100 
+                  }}
+                  className="mx-auto w-full max-w-6xl px-4 py-4 bg-gradient-to-r from-resurrection-primary/20 via-divine-accent/15 to-resurrection-secondary/20 border-2 border-gold-400/50 rounded-xl flex items-center justify-center mt-2 mb-2 backdrop-blur-2xl shadow-[0_0_40px_rgba(245,158,11,0.4)] relative overflow-hidden"
                 >
-                  <BookOpen className="h-4 w-4 text-gold-400 mr-2 flex-shrink-0" />
-                  <p className="text-xs text-center text-resurrection-foreground font-medium">
-                    <span className="text-gold-400 font-semibold">Educational Tool:</span> This platform is designed for informational, educational, and research purposes only - 
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-divine-sweep"></div>
+                  <BookOpen className="h-5 w-5 text-gold-400 mr-3 flex-shrink-0 animate-pulse-slow" />
+                  <p className="text-sm text-center text-resurrection-foreground font-medium leading-relaxed">
+                    <span className="text-gold-400 font-bold text-gradient-animate">✨ Educational Tool ✨</span> This platform is designed for informational, educational, and research purposes only - 
                     to study and understand diverse religious traditions through interactive AI simulations.
                   </p>
                 </motion.div>
                 
                 <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  className="mx-auto w-full max-w-6xl px-4 py-2 bg-gradient-to-r from-divine-purple/10 to-resurrection-secondary/10 border border-divine-ethereal/30 rounded-xl flex items-center justify-center mt-1 mb-1 backdrop-blur-xl shadow-lg"
+                  initial={{ opacity: 0, y: -20, scale: 0.9 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: -20, scale: 0.9 }}
+                  transition={{ 
+                    duration: 0.8, 
+                    delay: 0.5,
+                    type: "spring",
+                    stiffness: 100 
+                  }}
+                  className="mx-auto w-full max-w-6xl px-4 py-3 bg-gradient-to-r from-divine-purple/15 via-resurrection-secondary/10 to-divine-ethereal/15 border-2 border-divine-ethereal/40 rounded-xl flex items-center justify-center mt-1 mb-2 backdrop-blur-2xl shadow-[0_0_30px_rgba(168,85,247,0.3)] relative overflow-hidden"
                 >
-                  <InfoIcon className="h-4 w-4 text-divine-ethereal mr-2" />
-                  <p className="text-xs text-center text-resurrection-foreground/90">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-divine-sweep animation-delay-1000"></div>
+                  <InfoIcon className="h-5 w-5 text-divine-ethereal mr-3 animate-pulse-slow" />
+                  <p className="text-sm text-center text-resurrection-foreground/95 leading-relaxed">
                     All responses are AI-generated interpretations of religious concepts designed to aid in religious studies and understanding diverse traditions.
                   </p>
                 </motion.div>
