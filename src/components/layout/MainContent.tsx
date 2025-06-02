@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { useGods } from "@/context/GodsContext";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,7 +11,6 @@ import HomeFAQ from "@/components/HomeFAQ";
 import FAQ from "@/components/FAQ";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
 import Footer from "./Footer";
-import DivineLightEffect from "@/components/effects/DivineLightEffect";
 import DivineParticles from "@/components/effects/DivineParticles";
 
 const MainContent: React.FC = () => {
@@ -43,7 +43,6 @@ const MainContent: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col relative">
-      <DivineLightEffect />
       <DivineParticles />
       
       <main className="flex-1 container mx-auto px-4 py-6 md:py-10 relative z-10">
