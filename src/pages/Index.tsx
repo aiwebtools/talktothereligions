@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { GodsProvider } from "@/context/GodsContext";
 import Header from "@/components/Header";
 import MainContent from "@/components/layout/MainContent";
+import SEOContent from "@/components/SEOContent";
 import { motion, AnimatePresence } from "framer-motion";
 import { InfoIcon, BookOpen } from "lucide-react";
 import AgreementPopup from "@/components/AgreementPopup";
@@ -20,9 +21,17 @@ const Index: React.FC = () => {
     }
   }, []);
 
-  // Update the page title to better reflect the tool's name
+  // Update the page title and meta description for better SEO
   useEffect(() => {
-    document.title = "Talk to the Gods | Religious Studies Simulator";
+    document.title = "AI Web Tools - Free AI Tools | Talk to the Gods Religious Studies Simulator";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 
+        'Free AI web tools including Talk to the Gods GPT - an advanced religious studies simulator. Explore theological perspectives, study world religions, and understand diverse spiritual traditions through AI technology.'
+      );
+    }
   }, []);
   
   const handleAgree = () => {
@@ -31,6 +40,8 @@ const Index: React.FC = () => {
 
   return (
     <GodsProvider>
+      <SEOContent />
+      
       <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-cosmic-950 via-divine-cosmic to-cosmic-900">
         {/* Enhanced cosmic background layers */}
         <DivineAuroraField />
