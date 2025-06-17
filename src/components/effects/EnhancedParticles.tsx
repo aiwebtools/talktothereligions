@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 type DivineParticle = {
   x: number;
@@ -18,6 +19,7 @@ const EnhancedParticles: React.FC = () => {
   const particlesRef = useRef<DivineParticle[]>([]);
   const animationRef = useRef<number | null>(null);
   const mouseRef = useRef({ x: 0, y: 0 });
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -25,6 +27,11 @@ const EnhancedParticles: React.FC = () => {
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+
+    // Mobile optimizations
+    const maxParticles = isMobile ? 20 : 80;
+    const trailLength = isMobile ? 3 : 10;
+    const animationQuality = isMobile ? 0.5 : 1;
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
@@ -64,44 +71,47 @@ const EnhancedParticles: React.FC = () => {
       return {
         x,
         y,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 3 + 1,
+        vx: (Math.random() - 0.5) * (isMobile ? 0.2 : 0.5),
+        vy: (Math.random() - 0.5) * (isMobile ? 0.2 : 0.5),
+        size: Math.random() * (isMobile ? 2 : 3) + 1,
         life: 0,
-        maxLife: Math.random() * 500 + 200,
+        maxLife: Math.random() * (isMobile ? 300 : 500) + 200,
         color: colors[Math.floor(Math.random() * colors.length)],
         trail: [],
       };
     };
 
     const updateParticle = (particle: DivineParticle) => {
-      // Mouse attraction
-      const dx = mouseRef.current.x - particle.x;
-      const dy = mouseRef.current.y - particle.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      
-      if (distance < 200) {
-        const force = (200 - distance) / 200 * 0.01;
-        particle.vx += (dx / distance) * force;
-        particle.vy += (dy / distance) * force;
+      // Reduced mouse attraction on mobile
+      if (!isMobile) {
+        const dx = mouseRef.current.x - particle.x;
+        const dy = mouseRef.current.y - particle.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < 200) {
+          const force = (200 - distance) / 200 * 0.01;
+          particle.vx += (dx / distance) * force;
+          particle.vy += (dy / distance) * force;
+        }
       }
 
-      // Divine flow patterns
-      particle.vx += Math.sin(particle.y * 0.01 + particle.life * 0.02) * 0.01;
-      particle.vy += Math.cos(particle.x * 0.01 + particle.life * 0.02) * 0.01;
+      // Simplified flow patterns for mobile
+      const flowIntensity = isMobile ? 0.005 : 0.01;
+      particle.vx += Math.sin(particle.y * 0.01 + particle.life * 0.02) * flowIntensity;
+      particle.vy += Math.cos(particle.x * 0.01 + particle.life * 0.02) * flowIntensity;
 
       particle.x += particle.vx;
       particle.y += particle.vy;
       particle.life++;
 
-      // Add to trail
+      // Reduced trail length for mobile
       particle.trail.push({ 
         x: particle.x, 
         y: particle.y, 
         alpha: 1 - particle.life / particle.maxLife 
       });
       
-      if (particle.trail.length > 10) {
+      if (particle.trail.length > trailLength) {
         particle.trail.shift();
       }
 
@@ -113,56 +123,62 @@ const EnhancedParticles: React.FC = () => {
     const drawParticle = (particle: DivineParticle) => {
       const alpha = 1 - particle.life / particle.maxLife;
       
-      // Draw trail
-      particle.trail.forEach((point, index) => {
-        const trailAlpha = alpha * point.alpha * (index / particle.trail.length);
-        const size = particle.size * (index / particle.trail.length) * 0.5;
-        
-        ctx.globalAlpha = trailAlpha * 0.3;
-        ctx.fillStyle = particle.color;
-        ctx.beginPath();
-        ctx.arc(point.x, point.y, size, 0, Math.PI * 2);
-        ctx.fill();
-      });
+      // Simplified trail rendering for mobile
+      if (!isMobile || particle.trail.length <= 2) {
+        particle.trail.forEach((point, index) => {
+          const trailAlpha = alpha * point.alpha * (index / particle.trail.length);
+          const size = particle.size * (index / particle.trail.length) * 0.5;
+          
+          ctx.globalAlpha = trailAlpha * (isMobile ? 0.2 : 0.3);
+          ctx.fillStyle = particle.color;
+          ctx.beginPath();
+          ctx.arc(point.x, point.y, size, 0, Math.PI * 2);
+          ctx.fill();
+        });
+      }
 
-      // Draw main particle with glow
-      ctx.globalAlpha = alpha;
+      // Draw main particle with reduced glow on mobile
+      ctx.globalAlpha = alpha * animationQuality;
       
-      // Outer glow
+      // Simplified glow for mobile
+      const glowSize = isMobile ? particle.size * 2 : particle.size * 4;
       const gradient = ctx.createRadialGradient(
         particle.x, particle.y, 0,
-        particle.x, particle.y, particle.size * 4
+        particle.x, particle.y, glowSize
       );
       gradient.addColorStop(0, particle.color);
       gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
       
       ctx.fillStyle = gradient;
       ctx.beginPath();
-      ctx.arc(particle.x, particle.y, particle.size * 4, 0, Math.PI * 2);
+      ctx.arc(particle.x, particle.y, glowSize, 0, Math.PI * 2);
       ctx.fill();
 
       // Inner bright core
-      ctx.globalAlpha = alpha * 0.8;
+      ctx.globalAlpha = alpha * 0.8 * animationQuality;
       ctx.fillStyle = particle.color;
       ctx.beginPath();
       ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
       ctx.fill();
 
-      // Bright center
-      ctx.globalAlpha = alpha;
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-      ctx.beginPath();
-      ctx.arc(particle.x, particle.y, particle.size * 0.3, 0, Math.PI * 2);
-      ctx.fill();
+      // Bright center (simplified for mobile)
+      if (!isMobile) {
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size * 0.3, 0, Math.PI * 2);
+        ctx.fill();
+      }
     };
 
     const animate = () => {
       ctx.globalAlpha = 1;
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillStyle = isMobile ? 'rgba(0, 0, 0, 0.1)' : 'rgba(0, 0, 0, 0.05)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Add new particles
-      if (particlesRef.current.length < 80 && Math.random() < 0.3) {
+      // Reduced particle spawn rate on mobile
+      const spawnRate = isMobile ? 0.1 : 0.3;
+      if (particlesRef.current.length < maxParticles && Math.random() < spawnRate) {
         particlesRef.current.push(createParticle());
       }
 
@@ -181,29 +197,35 @@ const EnhancedParticles: React.FC = () => {
     };
 
     const handleMouseMove = (e: MouseEvent) => {
-      mouseRef.current.x = e.clientX;
-      mouseRef.current.y = e.clientY;
+      if (!isMobile) {
+        mouseRef.current.x = e.clientX;
+        mouseRef.current.y = e.clientY;
+      }
     };
 
     window.addEventListener('resize', resizeCanvas);
-    window.addEventListener('mousemove', handleMouseMove);
+    if (!isMobile) {
+      window.addEventListener('mousemove', handleMouseMove);
+    }
     resizeCanvas();
     animate();
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('mousemove', handleMouseMove);
+      if (!isMobile) {
+        window.removeEventListener('mousemove', handleMouseMove);
+      }
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <canvas 
       ref={canvasRef} 
       className="fixed top-0 left-0 w-full h-full pointer-events-none z-[1]"
-      style={{ opacity: 0.7 }}
+      style={{ opacity: isMobile ? 0.4 : 0.7 }}
     />
   );
 };

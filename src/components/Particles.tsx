@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 type Particle = {
   x: number;
@@ -15,6 +16,7 @@ const Particles: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const animationRef = useRef<number | null>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -32,14 +34,16 @@ const Particles: React.FC = () => {
 
     const createParticles = () => {
       particlesRef.current = [];
-      for (let i = 0; i < 50; i++) {
+      const particleCount = isMobile ? 20 : 50; // Reduced particles for mobile
+      
+      for (let i = 0; i < particleCount; i++) {
         const particle: Particle = {
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 2 + 0.5,
-          speedX: (Math.random() - 0.5) * 0.3,
-          speedY: (Math.random() - 0.5) * 0.3,
-          opacity: Math.random() * 0.5 + 0.1,
+          size: Math.random() * (isMobile ? 1.5 : 2) + 0.5,
+          speedX: (Math.random() - 0.5) * (isMobile ? 0.15 : 0.3),
+          speedY: (Math.random() - 0.5) * (isMobile ? 0.15 : 0.3),
+          opacity: Math.random() * (isMobile ? 0.3 : 0.5) + 0.1,
           color: getRandomColor(),
         };
         particlesRef.current.push(particle);
@@ -76,7 +80,10 @@ const Particles: React.FC = () => {
         else if (particle.y < 0) particle.y = canvas.height;
       });
 
-      connectParticles(ctx);
+      // Simplified connection lines for mobile
+      if (!isMobile) {
+        connectParticles(ctx);
+      }
       
       animationRef.current = requestAnimationFrame(animate);
     };
@@ -114,13 +121,13 @@ const Particles: React.FC = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <canvas 
       ref={canvasRef} 
       className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: isMobile ? 0.3 : 0.6 }}
     />
   );
 };

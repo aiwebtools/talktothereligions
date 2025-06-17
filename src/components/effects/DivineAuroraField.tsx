@@ -1,9 +1,11 @@
 
 import React, { useEffect, useRef } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const DivineAuroraField: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -24,7 +26,11 @@ const DivineAuroraField: React.FC = () => {
       phase: number;
       color: string;
       opacity: number;
-    }> = [
+    }> = isMobile ? [
+      // Reduced waves for mobile
+      { amplitude: 60, frequency: 0.02, phase: 0, color: '245, 158, 11', opacity: 0.2 },
+      { amplitude: 80, frequency: 0.015, phase: Math.PI / 3, color: '233, 53, 193', opacity: 0.15 },
+    ] : [
       { amplitude: 100, frequency: 0.02, phase: 0, color: '245, 158, 11', opacity: 0.3 },
       { amplitude: 150, frequency: 0.015, phase: Math.PI / 3, color: '233, 53, 193', opacity: 0.25 },
       { amplitude: 120, frequency: 0.025, phase: Math.PI / 2, color: '168, 85, 247', opacity: 0.35 },
@@ -44,7 +50,8 @@ const DivineAuroraField: React.FC = () => {
         ctx.fillStyle = gradient;
         ctx.beginPath();
         
-        for (let x = 0; x <= canvas.width; x += 5) {
+        const step = isMobile ? 10 : 5; // Larger step for mobile performance
+        for (let x = 0; x <= canvas.width; x += step) {
           const y = canvas.height / 2 + 
             Math.sin(x * wave.frequency + time + wave.phase) * wave.amplitude +
             Math.sin(x * wave.frequency * 2 + time * 1.5 + wave.phase) * wave.amplitude * 0.5;
@@ -62,11 +69,12 @@ const DivineAuroraField: React.FC = () => {
         ctx.fill();
       });
 
-      // Add floating divine particles
-      for (let i = 0; i < 15; i++) {
+      // Reduced floating particles for mobile
+      const particleCount = isMobile ? 5 : 15;
+      for (let i = 0; i < particleCount; i++) {
         const x = (time * 0.5 + i * 50) % (canvas.width + 100);
         const y = canvas.height / 2 + Math.sin(time * 0.01 + i) * 200;
-        const size = 2 + Math.sin(time * 0.02 + i) * 1;
+        const size = isMobile ? 1.5 : 2 + Math.sin(time * 0.02 + i) * 1;
         
         const particleGradient = ctx.createRadialGradient(x, y, 0, x, y, size * 3);
         particleGradient.addColorStop(0, 'rgba(245, 158, 11, 0.8)');
@@ -79,7 +87,7 @@ const DivineAuroraField: React.FC = () => {
         ctx.fill();
       }
       
-      time += 0.02;
+      time += isMobile ? 0.01 : 0.02; // Slower animation on mobile
       animationRef.current = requestAnimationFrame(animate);
     };
 
@@ -93,13 +101,13 @@ const DivineAuroraField: React.FC = () => {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <canvas 
       ref={canvasRef} 
       className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
-      style={{ opacity: 0.4 }}
+      style={{ opacity: isMobile ? 0.2 : 0.4 }}
     />
   );
 };
