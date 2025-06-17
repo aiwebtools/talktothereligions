@@ -14,6 +14,7 @@ import ResearchTestimonials from "./welcome/ResearchTestimonials";
 import DivineOrb from "./welcome/DivineOrb";
 import SpiritualPaths from "./welcome/SpiritualPaths";
 import DivineBenefits from "./welcome/DivineBenefits";
+import UniversalLove from "./welcome/UniversalLove";
 
 const Welcome: React.FC = () => {
   const { setStage } = useGods();
@@ -36,6 +37,7 @@ const Welcome: React.FC = () => {
         <CTAButtons handleBegin={handleBegin} />
       </motion.div>
       
+      <UniversalLove />
       <DivineBenefits />
       <SpiritualPaths />
       <ResearchTestimonials />
