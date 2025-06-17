@@ -32,8 +32,108 @@ const UniversalLove: React.FC = () => {
     },
     {
       tradition: "Sikhism",
-      quote: "Even kings and emperors with heaps of wealth and vast dominion cannot compare with an ant filled with the love of God",
+      quote: "Even kings and emperors with heaps of wealth cannot compare with an ant filled with the love of God",
       symbol: "☬"
+    },
+    {
+      tradition: "Taoism",
+      quote: "Being deeply loved gives you strength, while loving deeply gives you courage",
+      symbol: "☯️"
+    },
+    {
+      tradition: "Confucianism",
+      quote: "To love a thing means wanting it to live",
+      symbol: "📜"
+    },
+    {
+      tradition: "Jainism",
+      quote: "All beings hate pain; therefore, one should not harm them",
+      symbol: "🙏"
+    },
+    {
+      tradition: "Bahá'í Faith",
+      quote: "Love is the secret of God's holy Dispensation",
+      symbol: "🌟"
+    },
+    {
+      tradition: "Shinto",
+      quote: "The kami teach us to love and respect all life",
+      symbol: "⛩️"
+    },
+    {
+      tradition: "Zoroastrianism",
+      quote: "Good thoughts, good words, good deeds - all flow from love",
+      symbol: "🔥"
+    },
+    {
+      tradition: "Greek Mythology",
+      quote: "Love conquers all, and we too surrender to love",
+      symbol: "⚡"
+    },
+    {
+      tradition: "Norse Mythology",
+      quote: "Love is the bridge between two hearts",
+      symbol: "⚒️"
+    },
+    {
+      tradition: "Egyptian Mythology",
+      quote: "The heart that loves is always young",
+      symbol: "𓂀"
+    },
+    {
+      tradition: "Celtic Spirituality",
+      quote: "Love is the light that guides us through the sacred groves",
+      symbol: "🍀"
+    },
+    {
+      tradition: "Native American",
+      quote: "We are all connected by the sacred thread of love",
+      symbol: "🦅"
+    },
+    {
+      tradition: "Shamanism",
+      quote: "Love is the healing medicine of the spirit",
+      symbol: "🥁"
+    },
+    {
+      tradition: "Kabbalah",
+      quote: "Love is the bridge between you and everything",
+      symbol: "🌳"
+    },
+    {
+      tradition: "Sufism",
+      quote: "Let yourself be silently drawn by love",
+      symbol: "🌹"
+    },
+    {
+      tradition: "Gnosticism",
+      quote: "Divine love is the gnosis that awakens the soul",
+      symbol: "👁️"
+    },
+    {
+      tradition: "Sacred Geometry",
+      quote: "Love is the perfect harmony that creates all sacred forms",
+      symbol: "🔮"
+    },
+    {
+      tradition: "Hermeticism",
+      quote: "As above, so below - love is the universal principle",
+      symbol: "⚗️"
+    },
+    {
+      tradition: "Theosophy",
+      quote: "Universal brotherhood is founded on divine love",
+      symbol: "✨"
+    },
+    {
+      tradition: "Vedanta",
+      quote: "Love is the recognition of oneness in all beings",
+      symbol: "🪷"
+    },
+    {
+      tradition: "Aztec Spirituality",
+      quote: "In love and war, the heart finds its divine purpose",
+      symbol: "🐍"
     }
   ];
 
@@ -83,32 +183,32 @@ const UniversalLove: React.FC = () => {
           </motion.div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 relative z-10">
           {traditions.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
+              transition={{ duration: 0.6, delay: index * 0.08 }}
               whileHover={{ scale: 1.05, rotate: 1 }}
-              className="bg-gradient-to-br from-white/5 to-white/10 border border-resurrection-primary/30 rounded-xl p-6 relative overflow-hidden group cursor-pointer"
+              className="bg-gradient-to-br from-white/5 to-white/10 border border-resurrection-primary/30 rounded-xl p-4 relative overflow-hidden group cursor-pointer"
             >
               <div className="absolute -top-10 -right-10 h-32 w-32 bg-resurrection-accent/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              <div className="text-4xl mb-4 transition-transform duration-500 group-hover:scale-125 text-center">
+              <div className="text-3xl mb-3 transition-transform duration-500 group-hover:scale-125 text-center">
                 {item.symbol}
               </div>
               
-              <h4 className="text-lg font-serif text-resurrection-primary mb-3 text-center font-bold">
+              <h4 className="text-base font-serif text-resurrection-primary mb-2 text-center font-bold">
                 {item.tradition}
               </h4>
               
-              <blockquote className="text-sm text-resurrection-foreground/80 italic text-center leading-relaxed">
+              <blockquote className="text-xs text-resurrection-foreground/80 italic text-center leading-relaxed">
                 "{item.quote}"
               </blockquote>
               
-              <div className="flex justify-center mt-4">
-                <Sparkles className="h-4 w-4 text-resurrection-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-slow" />
+              <div className="flex justify-center mt-3">
+                <Sparkles className="h-3 w-3 text-resurrection-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse-slow" />
               </div>
             </motion.div>
           ))}
@@ -117,7 +217,7 @@ const UniversalLove: React.FC = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
+          transition={{ duration: 0.8, delay: 2 }}
           className="text-center mt-12 relative z-10"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
