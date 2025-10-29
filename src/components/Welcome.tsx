@@ -20,7 +20,7 @@ const Welcome: React.FC = () => {
   const { setStage } = useGods();
 
   const handleBegin = () => {
-    window.open("https://chatgpt.com/g/g-KrXujWZPM-talk-to-your-god-gpt", "_blank");
+    window.open("https://chatgpt.com/g/g-6901478f2bf88191b49298a508bbd486-religious-studies-gpt", "_blank");
   };
 
   return (

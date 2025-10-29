@@ -136,7 +136,7 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
           </Button>
           
           <a 
-            href="https://chatgpt.com/g/g-KrXujWZPM-talk-to-your-god-gpt" 
+            href="https://chatgpt.com/g/g-6901478f2bf88191b49298a508bbd486-religious-studies-gpt"
             target="_blank" 
             rel="noopener noreferrer"
           >
