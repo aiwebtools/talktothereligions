@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center justify-center md:justify-start">
               <h2 className="text-lg md:text-xl font-serif font-light tracking-wider text-resurrection-foreground flex items-center">
                 <span className="text-gradient-animate mr-1 md:mr-2 text-base md:text-lg">🔮</span> 
-                <span className="text-white/90 text-sm md:text-base">Talk to the Gods</span>
+                <span className="text-white/90 text-sm md:text-base">Religious Studies</span>
                 <Eye 
                   className="mx-1 md:mx-2 text-resurrection-accent h-4 w-4 md:h-5 md:w-5 animate-pulse-slow" 
                   strokeWidth={1.5} 
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
                 Presented by AiWebTools.Ai
               </a>
               <p className="text-[10px] md:text-[12px] text-resurrection-foreground/70 tracking-wide leading-relaxed">
-                Connect with the divine through an immersive spiritual experience with the deity of your choice.
+                Study theological concepts through first-person contextual learning. God is the Light.
               </p>
             </div>
           </div>
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
                 )}
               >
                 <Server className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />
-                BEGIN DIVINE CONNECTION
+                BEGIN RELIGIOUS STUDIES
               </Button>
             </a>
           </div>

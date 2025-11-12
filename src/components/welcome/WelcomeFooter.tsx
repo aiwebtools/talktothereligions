@@ -21,7 +21,7 @@ const WelcomeFooter: React.FC = () => {
         <div className="flex items-center justify-center mb-2">
           <h3 className="text-base md:text-lg font-serif font-light tracking-wider text-resurrection-foreground flex items-center">
             <span className="text-gradient-animate mr-1 text-sm md:text-base">🔮</span> 
-            <span className="text-white/90 text-xs md:text-sm">Talk to the Gods</span>
+            <span className="text-white/90 text-xs md:text-sm">Religious Studies</span>
             <Eye 
               className="mx-1 text-resurrection-accent h-3 w-3 md:h-4 md:w-4 animate-pulse-slow" 
               strokeWidth={1.5} 
@@ -32,7 +32,7 @@ const WelcomeFooter: React.FC = () => {
           </h3>
         </div>
         <p className="text-[6px] md:text-[9px] text-resurrection-foreground/50 mb-3 tracking-wide leading-relaxed">
-          Connect with the divine through an immersive spiritual experience with the deity of your choice.
+          Study theological concepts through first-person contextual learning. God is the Light.
         </p>
         <p className="mb-2 text-resurrection-foreground/70 text-xs md:text-sm">
           Contact Us
@@ -105,7 +105,7 @@ const WelcomeFooter: React.FC = () => {
               "text-xs md:text-sm px-4 py-1.5 h-8 md:h-10"
             )}
           >
-            Begin Your Divine Connection
+            Begin Your Religious Studies
             <ExternalLink className="ml-1.5 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
           </Button>
         </a>

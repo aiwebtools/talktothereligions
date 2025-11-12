@@ -32,7 +32,7 @@ const WelcomeHeader: React.FC = () => {
           >
             <span className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
             <Zap className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 mr-1 sm:mr-2 text-yellow-200 animate-pulse flex-shrink-0" />
-            <span className="whitespace-normal sm:whitespace-nowrap">EXPLORE RELIGIOUS PERSPECTIVES</span>
+            <span className="whitespace-normal sm:whitespace-nowrap">START RELIGIOUS STUDIES GPT</span>
             <Zap className="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 ml-1 sm:ml-2 text-yellow-200 animate-pulse flex-shrink-0" />
           </Button>
         </a>
@@ -94,10 +94,11 @@ const WelcomeHeader: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="text-base leading-relaxed"
         >
-          Talk to the Gods GPT is an advanced AI educational tool designed to help you 
-          study and understand theological perspectives from any religion or spiritual tradition. 
-          Through interactive simulations, explore religious teachings, moral frameworks,
-          and philosophical insights from diverse belief systems for research and learning.
+          Religious Studies GPT is an advanced AI educational tool designed to help you 
+          study and understand theological concepts from any religion or spiritual tradition. 
+          Through first-person contextual learning, explore religious teachings, moral frameworks,
+          and philosophical insights from diverse belief systems for academic research and learning.
+          God is the Light guiding all understanding.
         </motion.p>
         
         <motion.p 
@@ -120,7 +121,7 @@ const WelcomeHeader: React.FC = () => {
           <AlertTriangle className="h-5 w-5 text-yellow-500 flex-shrink-0 mt-0.5" />
           <div>
             <p className="font-medium text-resurrection-foreground mb-1">Educational Disclaimer:</p>
-            <p className="text-resurrection-foreground/80">Talk to the Gods GPT is an educational tool for studying religious traditions and theological concepts. It offers simulated perspectives based on religious texts and scholarship. Please read our <a href="#disclaimer" className="text-resurrection-primary hover:text-resurrection-accent underline">full disclaimer</a> before proceeding.</p>
+            <p className="text-resurrection-foreground/80">Religious Studies GPT is an educational tool for studying religious traditions and theological concepts through first-person context. It offers perspectives based on religious texts and scholarship for academic research, not for worship. Please read our <a href="#disclaimer" className="text-resurrection-primary hover:text-resurrection-accent underline">full disclaimer</a> before proceeding.</p>
           </div>
         </div>
       </motion.div>

@@ -40,7 +40,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ handleHomeClick }) => {
           >
             <span className="flex items-center">
               <Sparkles className="mr-2 h-4 w-4" />
-              <span>Use Talk to the Gods GPT</span>
+              <span>Start Religious Studies GPT</span>
             </span>
             <ExternalLink className="h-3 w-3 ml-2" />
           </a>

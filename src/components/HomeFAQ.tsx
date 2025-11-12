@@ -8,20 +8,20 @@ import { cn } from "@/lib/utils";
 const HomeFAQ: React.FC = () => {
   const faqs = [
     {
-      question: "What is Talk to the Gods?",
-      answer: "Talk to the Gods is an educational tool designed to help you explore religious perspectives and theological concepts from different traditions through an interactive, simulated conversation format. It offers an immersive learning experience that helps you understand various religious viewpoints based on their documented teachings and historical records."
+      question: "What is Religious Studies GPT?",
+      answer: "Religious Studies GPT is an educational tool designed to help you explore religious perspectives and theological concepts from different traditions through first-person contextual learning. It offers an immersive learning experience that helps you understand various religious viewpoints based on their documented teachings and historical records."
     },
     {
       question: "How does it work?",
-      answer: "You select a religious figure from any tradition, ask questions about their teachings or philosophy, and our AI creates responses based on documented religious texts, scholarly interpretations, and historical understanding associated with that tradition. This approach allows for comparative religious study in an interactive format."
+      answer: "You select a religious tradition you wish to study, ask questions about their teachings or philosophy, and our AI creates responses based on documented religious texts, scholarly interpretations, and historical understanding associated with that tradition. This approach allows for comparative religious study through first-person contextual learning."
     },
     {
-      question: "Is this real communication with religious figures?",
-      answer: "No. This is an AI-driven educational simulation for research and learning purposes. It's important to understand that this is not a spiritual or mystical tool, but rather a technological approach to exploring and understanding religious teachings and perspectives."
+      question: "Is this a worship tool?",
+      answer: "No. This is an AI-driven educational tool for research and learning purposes. It's important to understand that this is not a spiritual or devotional tool, but rather a technological approach to exploring and understanding religious teachings and perspectives for academic study. God is the Light."
     },
     {
       question: "Which religious traditions can I explore?",
-      answer: "The system supports figures from all major world religions including Christianity, Islam, Judaism, Hinduism, Buddhism, and many others, as well as figures from ancient pantheons and indigenous traditions, allowing for comprehensive comparative religious studies."
+      answer: "The system supports all major world religions including Christianity, Islam, Judaism, Hinduism, Buddhism, and many others, as well as ancient traditions and indigenous beliefs, allowing for comprehensive comparative religious studies."
     },
     {
       question: "How accurate are the responses?",

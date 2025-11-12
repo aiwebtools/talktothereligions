@@ -39,18 +39,15 @@ const MobileLogo: React.FC = () => {
         {/* Mobile Sacred Glow */}
         <div className="absolute inset-0 bg-gradient-radial from-white/20 via-gold-400/15 to-transparent rounded-lg blur-lg animate-pulse"></div>
         
-        <h1 className="text-lg font-serif text-white/95 flex items-center relative">
-          <span className="mr-1 relative">
-            Talk to the
+        <h1 className="text-base font-serif text-white/95 flex items-center relative">
+          <span className="mr-1 relative text-sm">
+            Religious Studies
             <Zap className="absolute -top-0.5 -right-0.5 h-1.5 w-1.5 text-yellow-300 animate-ping" />
           </span>
           
-          <div className="relative mx-1">
-            <Wand2 
-              className="h-4 w-4 text-[#9b87f5] animate-float relative z-10" 
-              strokeWidth={1.5} 
-            />
-            <div className="absolute inset-0 bg-gradient-radial from-purple-500/50 to-transparent rounded-full blur-sm animate-pulse-slow"></div>
+          <div className="relative mx-0.5">
+            <span className="text-lg">📖</span>
+            <div className="absolute inset-0 bg-gradient-radial from-gold-500/50 to-transparent rounded-full blur-sm animate-pulse-slow"></div>
             <Sparkles className="absolute -top-0.5 -right-0.5 h-1 w-1 text-gold-300 animate-ping" />
           </div>
           
@@ -66,7 +63,7 @@ const MobileLogo: React.FC = () => {
                 animation: 'divine-text-shimmer 2s ease-in-out infinite'
               }}
             >
-              Gods GPT
+              GPT
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 via-gold-400/20 to-purple-400/20 blur-md animate-pulse-slow"></div>
           </span>

@@ -11,20 +11,20 @@ interface FAQProps {
 const FAQ: React.FC<FAQProps> = ({ onClose }) => {
   const faqs = [
     {
-      question: "What is Talk to the Gods GPT?",
-      answer: "Talk to the Gods GPT is an advanced AI educational tool designed to help you study and understand theological perspectives from any religion or spiritual tradition. Through interactive simulations, this tool offers an opportunity to explore religious teachings, moral frameworks, and philosophical insights from diverse belief systems."
+      question: "What is Religious Studies GPT?",
+      answer: "Religious Studies GPT is an advanced AI educational tool designed to help you study and understand theological concepts from any religion or spiritual tradition through first-person contextual learning. This tool offers an opportunity to explore religious teachings, moral frameworks, and philosophical insights from diverse belief systems for academic research and learning."
     },
     {
-      question: "How does Talk to the Gods GPT work?",
-      answer: "The process is simple: 1) You select a religious figure from any tradition you wish to study; 2) Our AI creates an educational simulation by synthesizing known teachings, texts, and scholarly interpretations from that tradition; 3) You engage in an interactive learning experience to study religious concepts, ethical frameworks, and theological perspectives that align with that tradition's documented beliefs."
+      question: "How does Religious Studies GPT work?",
+      answer: "The process is simple: 1) You select a religious tradition you wish to study; 2) Our AI creates an educational experience by synthesizing known teachings, texts, and scholarly interpretations from that tradition; 3) You engage in first-person contextual learning to study religious concepts, ethical frameworks, and theological perspectives that align with that tradition's documented beliefs."
     },
     {
       question: "Which religious traditions can I explore?",
-      answer: "Talk to the Gods GPT supports a vast array of religious traditions and theological perspectives across all major world religions and spiritual systems. This includes but is not limited to Christianity, Islam, Judaism, Hinduism, Buddhism, Taoism, Shinto, Greek/Roman traditions, Norse traditions, Celtic spirituality, indigenous beliefs, and many more."
+      answer: "Religious Studies GPT supports a vast array of religious traditions and theological perspectives across all major world religions and spiritual systems. This includes but is not limited to Christianity, Islam, Judaism, Hinduism, Buddhism, Taoism, Shinto, Greek/Roman traditions, Norse traditions, Celtic spirituality, indigenous beliefs, and many more."
     },
     {
       question: "Is this meant to be a religious experience?",
-      answer: "No. Talk to the Gods GPT is an educational and research tool designed for comparative religious studies, academic exploration, and understanding diverse theological perspectives. It creates an engaging learning experience based on the documented teachings and scholarly understandings of various religious traditions. It's important to understand that this is a technological approach to studying religious concepts, not a spiritual or devotional tool."
+      answer: "No. Religious Studies GPT is an educational and research tool designed for comparative religious studies, academic exploration, and understanding diverse theological perspectives through first-person context. It creates an engaging learning experience based on documented teachings and scholarly understandings of various religious traditions. This is a technological approach to studying religious concepts for education, not worship."
     },
     {
       question: "How accurate are the responses to theological questions?",
@@ -32,15 +32,15 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
     },
     {
       question: "Can I use this for academic research?",
-      answer: "Talk to the Gods GPT can be a valuable supplementary tool for exploring religious concepts and comparing theological perspectives across traditions. However, for academic research, we recommend using it alongside traditional scholarly sources, primary religious texts, and consultation with academic experts in religious studies. This tool is best used as a starting point for deeper research and exploration."
+      answer: "Religious Studies GPT can be a valuable supplementary tool for exploring religious concepts and comparing theological perspectives across traditions. However, for academic research, we recommend using it alongside traditional scholarly sources, primary religious texts, and consultation with academic experts in religious studies. This tool is best used as a starting point for deeper research and exploration."
     },
     {
       question: "Is my information kept private?",
-      answer: "Yes, your privacy is important to us. Your interactions with Talk to the Gods GPT remain private and secure. We do not store conversations beyond your session unless you specifically request to save them. For more information, please read our Privacy Policy."
+      answer: "Yes, your privacy is important to us. Your interactions with Religious Studies GPT remain private and secure. We do not store conversations beyond your session unless you specifically request to save them. For more information, please read our Privacy Policy."
     },
     {
-      question: "Can I use Talk to the Gods GPT on mobile devices?",
-      answer: "Yes, Talk to the Gods GPT is fully responsive and works on all devices including smartphones, tablets, and desktop computers. You can access it through ChatGPT's interface on any device."
+      question: "Can I use Religious Studies GPT on mobile devices?",
+      answer: "Yes, Religious Studies GPT is fully responsive and works on all devices including smartphones, tablets, and desktop computers. You can access it through ChatGPT's interface on any device."
     },
     {
       question: "How do I provide feedback or report issues?",
@@ -77,7 +77,7 @@ const FAQ: React.FC<FAQProps> = ({ onClose }) => {
             <span>Important Disclaimer</span>
           </h3>
           <div className="space-y-3 text-sm pl-7">
-            <p>Talk to the Gods GPT is designed for educational research and religious studies. It provides AI-simulated responses based on religious texts, scholarly interpretations, and historical records. This is not a religious or spiritual tool but an educational resource for studying religious concepts.</p>
+            <p>Religious Studies GPT is designed for educational research and religious studies. It provides perspectives based on religious texts, scholarly interpretations, and historical records through first-person contextual learning. This is not a worship tool but an educational resource for studying religious concepts. God is the Light.</p>
             <p className="font-medium">For a complete understanding of how to use this tool appropriately, please read our <a href="#disclaimer" className="text-resurrection-accent underline">full disclaimer</a>.</p>
           </div>
         </div>

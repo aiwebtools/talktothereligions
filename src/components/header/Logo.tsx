@@ -101,39 +101,24 @@ const Logo: React.FC = () => {
             <Sparkles className="absolute top-0 right-0 h-2 w-2 md:h-4 md:w-4 text-cyan-300 animate-ping" />
           </span>
           
-          <span className="text-white/95 text-xs sm:text-sm md:text-2xl mr-2 relative">
-            Talk to the
+          <span className="text-white/95 text-xs sm:text-sm md:text-xl mr-2 relative">
+            Religious Studies
             <div className="absolute -top-1 -right-1">
               <Zap className="h-2 w-2 md:h-3 md:w-3 text-yellow-300 animate-pulse" />
             </div>
           </span>
           
-          {/* Sacred Eye with Divine Effects */}
-          <div className="relative mx-2 md:mx-3">
-            <Eye 
-              className="h-3 w-3 sm:h-4 sm:w-4 md:h-8 md:w-8 text-resurrection-accent animate-pulse-slow relative z-10" 
-              strokeWidth={1.5} 
-              fill="#9b87f5" 
-              fillOpacity={0.3} 
-            />
-            <div className="absolute inset-0 bg-gradient-radial from-purple-400/60 to-transparent rounded-full blur-md animate-pulse"></div>
-            <div className="absolute -inset-2 bg-gradient-conic from-purple-400/40 via-transparent to-purple-400/40 rounded-full blur-lg animate-spin-slow"></div>
+          {/* Sacred Book Icon with Divine Effects */}
+          <div className="relative mx-1 md:mx-2">
+            <span className="text-xl md:text-3xl">📖</span>
+            <div className="absolute inset-0 bg-gradient-radial from-gold-400/60 to-transparent rounded-full blur-md animate-pulse"></div>
+            <div className="absolute -inset-2 bg-gradient-conic from-gold-400/40 via-transparent to-gold-400/40 rounded-full blur-lg animate-spin-slow"></div>
           </div>
           
-          {/* Divine Wand with Sacred Power */}
-          <div className="relative mr-2">
-            <Wand2 
-              className="h-3 w-3 sm:h-4 sm:w-4 md:h-7 md:w-7 text-[#9b87f5] animate-float relative z-10" 
-              strokeWidth={1.5}
-            />
-            <div className="absolute inset-0 bg-gradient-radial from-purple-500/70 to-transparent rounded-full blur-sm animate-pulse-slow"></div>
-            <Sparkles className="absolute -top-1 -right-1 h-1.5 w-1.5 md:h-2 md:w-2 text-gold-300 animate-ping" />
-          </div>
-          
-          {/* Holy "Gods GPT" Text */}
+          {/* Holy "GPT" Text */}
           <span className="relative">
             <span className="bg-gradient-to-r from-[#9b87f5] via-[#fbbf24] to-[#8B5CF6] bg-clip-text text-transparent font-bold text-xs sm:text-sm md:text-2xl">
-              Gods GPT
+              GPT
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-400/30 via-gold-400/30 to-purple-400/30 blur-lg animate-pulse-slow"></div>
           </span>
