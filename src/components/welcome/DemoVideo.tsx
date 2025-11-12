@@ -13,18 +13,23 @@ const DemoVideo: React.FC = () => {
           See the Religious Studies Tool in Action
         </h4>
       </div>
-      <div className={cn(
-        "relative overflow-hidden rounded-lg shadow-lg mx-auto",
-        "border border-resurrection-primary/30 dark-glow",
-        "w-full max-w-md aspect-[9/16]"
-      )}>
-        <iframe 
-          className="absolute top-0 left-0 w-full h-full"
-          src="https://www.youtube.com/embed/XDS4qsb48h0?si=dQWg1aq-K9g5VTL9&amp;autoplay=1&amp;mute=0&amp;controls=1&amp;enablejsapi=1&amp;modestbranding=1&amp;rel=0&amp;hd=1&amp;vq=hd1080&amp;showinfo=0" 
-          title="Religious Studies GPT Demo" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowFullScreen
-        ></iframe>
+      <div className="mx-auto w-full max-w-md px-4 sm:px-0">
+        <div className={cn(
+          "relative overflow-hidden rounded-lg shadow-lg",
+          "border border-resurrection-primary/30 dark-glow",
+          "w-full"
+        )}
+        style={{ paddingBottom: '177.78%' }}
+        >
+          <iframe 
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/XDS4qsb48h0?si=dQWg1aq-K9g5VTL9&amp;autoplay=0&amp;mute=0&amp;controls=1&amp;enablejsapi=1&amp;modestbranding=1&amp;rel=0&amp;hd=1&amp;vq=hd1080&amp;showinfo=0" 
+            title="Religious Studies GPT Demo" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowFullScreen
+            style={{ border: 0 }}
+          ></iframe>
+        </div>
       </div>
       
       {/* Educational Value Section */}
