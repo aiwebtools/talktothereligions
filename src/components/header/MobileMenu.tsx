@@ -47,7 +47,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ handleHomeClick }) => {
         </DropdownMenuItem>
         <DropdownMenuItem asChild className="text-blue-400 hover:text-blue-300">
           <a 
-            href="https://www.aiwebtools.ai" 
+            href="https://aiwebtools.lovable.app/?via=aiwebtools" 
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-between w-full"

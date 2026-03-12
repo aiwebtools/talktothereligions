@@ -146,7 +146,7 @@ const Logo: React.FC = () => {
       <div className="text-center mt-1 relative z-10">
         <div className="absolute inset-0 bg-gradient-radial from-divine-accent/20 to-transparent rounded-lg blur-lg"></div>
         <a 
-          href="https://www.aiwebtools.ai"
+          href="https://aiwebtools.lovable.app/?via=aiwebtools"
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
