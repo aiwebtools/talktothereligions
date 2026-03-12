@@ -16,22 +16,23 @@ interface MobileMenuProps {
 
 const MobileMenu: React.FC<MobileMenuProps> = ({ handleHomeClick }) => {
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button 
           variant="ghost" 
           size="sm"
-          className="p-1"
+          className="p-1.5 active:scale-95 transition-transform touch-manipulation"
         >
           <Menu className="h-6 w-6 text-white/90" />
           <span className="sr-only">Menu</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent 
-        className="w-56 bg-resurrection-background/95 backdrop-blur-sm border border-resurrection-accent/20"
+        className="w-64 bg-resurrection-background/95 backdrop-blur-md border border-resurrection-accent/20 z-[100]"
         align="end"
+        sideOffset={8}
       >
-        <DropdownMenuItem asChild className="bg-gradient-to-r from-resurrection-primary to-resurrection-accent hover:from-resurrection-accent hover:to-resurrection-primary text-white font-medium">
+        <DropdownMenuItem asChild className="bg-gradient-to-r from-resurrection-primary to-resurrection-accent hover:from-resurrection-accent hover:to-resurrection-primary text-white font-medium py-3 cursor-pointer">
           <a 
             href="https://chatgpt.com/g/g-6901478f2bf88191b49298a508bbd486-religious-studies-gpt"
             target="_blank"
@@ -45,7 +46,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ handleHomeClick }) => {
             <ExternalLink className="h-3 w-3 ml-2" />
           </a>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild className="text-blue-400 hover:text-blue-300">
+        <DropdownMenuItem asChild className="text-blue-400 hover:text-blue-300 py-3 cursor-pointer">
           <a 
             href="https://aiwebtools.lovable.app/?via=aiwebtools" 
             target="_blank"
@@ -54,23 +55,23 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ handleHomeClick }) => {
           >
             <span className="flex items-center">
               <ExternalLink className="mr-2 h-4 w-4" />
-              <span>Access more AI tools</span>
+              <span>More AI Tools</span>
             </span>
             <ExternalLink className="h-3 w-3 ml-2" />
           </a>
         </DropdownMenuItem>
         <DropdownMenuSeparator className="bg-resurrection-accent/20" />
-        <DropdownMenuItem onClick={handleHomeClick}>
+        <DropdownMenuItem onClick={handleHomeClick} className="py-3 cursor-pointer">
           <Home className="mr-2 h-4 w-4" />
           <span>Home</span>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem asChild className="py-3 cursor-pointer">
           <a href="#faq" className="flex items-center">
             <HelpCircle className="mr-2 h-4 w-4" />
             <span>FAQ</span>
           </a>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem asChild className="py-3 cursor-pointer">
           <a href="#disclaimer" className="flex items-center">
             <AlertTriangle className="mr-2 h-4 w-4" />
             <span>Legal Disclaimer</span>
