@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
             </div>
             <div className="flex flex-col items-center md:items-start gap-1 mt-1">
               <a 
-                href="https://www.aiwebtools.ai"
+                href="https://aiwebtools.lovable.app/?via=aiwebtools"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[8px] md:text-[10px] text-resurrection-foreground/60 hover:text-resurrection-primary transition-colors duration-300 inline-block tracking-wide"
@@ -87,7 +87,7 @@ const Footer: React.FC = () => {
         
         <div className="flex flex-col md:flex-row md:justify-between items-center mb-5">
           <a 
-            href="https://www.aiwebtools.ai" 
+            href="https://aiwebtools.lovable.app/?via=aiwebtools" 
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-resurrection-primary transition-colors duration-300 text-center md:text-left mb-3 md:mb-0 text-[9px] md:text-xs"

@@ -90,7 +90,7 @@ const MobileLogo: React.FC = () => {
       <div className="text-center mt-0.5 relative z-10">
         <div className="absolute inset-0 bg-gradient-radial from-divine-accent/15 to-transparent rounded blur-md"></div>
         <a 
-          href="https://www.aiwebtools.ai"
+          href="https://aiwebtools.lovable.app/?via=aiwebtools"
           target="_blank"
           rel="noopener noreferrer"
           className="text-[7px] text-resurrection-foreground/60 hover:text-gold-300 transition-all duration-300 relative hover:drop-shadow-[0_0_8px_rgba(245,158,11,0.6)]"

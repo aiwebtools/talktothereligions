@@ -1,8 +1,7 @@
 
-import React, { useState } from "react";
+import React from "react";
 import { useGods } from "@/context/GodsContext";
 import { useNavigate } from "react-router-dom";
-import { cn } from "@/lib/utils";
 import Logo from "./header/Logo";
 import MobileLogo from "./header/MobileLogo";
 import MobileMenu from "./header/MobileMenu";
@@ -11,7 +10,6 @@ import NavigationButtons from "./header/NavigationButtons";
 const Header: React.FC = () => {
   const { stage } = useGods();
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false);
 
   const handleHomeClick = () => {
     navigate("/");
@@ -19,18 +17,21 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="w-full py-3 sm:py-4 md:py-8 px-2 sm:px-3 md:px-6 relative z-10">
+    <header className="w-full py-2 sm:py-4 md:py-6 px-2 sm:px-3 md:px-6 relative z-50">
       <div className="container mx-auto">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0 mb-2 sm:mb-3 md:mb-5">
-          <div className="text-center w-full sm:w-auto relative">
+        <div className="flex justify-between items-center">
+          {/* Desktop Logo - hidden on mobile */}
+          <div className="hidden sm:block">
             <Logo />
+          </div>
 
-            <div className="flex sm:hidden items-center justify-between w-full px-2">
-              <MobileLogo />
-              <MobileMenu handleHomeClick={handleHomeClick} />
-            </div>
+          {/* Mobile: Logo + Menu in a single row */}
+          <div className="flex sm:hidden items-center justify-between w-full">
+            <MobileLogo />
+            <MobileMenu handleHomeClick={handleHomeClick} />
           </div>
           
+          {/* Desktop Navigation */}
           <NavigationButtons handleHomeClick={handleHomeClick} />
         </div>
       </div>

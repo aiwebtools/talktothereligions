@@ -13,7 +13,7 @@ const DemoVideo: React.FC = () => {
           See the Religious Studies Tool in Action
         </h4>
       </div>
-      <div className="mx-auto w-full max-w-md px-4 sm:px-0">
+      <div className="mx-auto w-full max-w-xs sm:max-w-sm md:max-w-md px-2 sm:px-0">
         <div className={cn(
           "relative overflow-hidden rounded-lg shadow-lg",
           "border border-resurrection-primary/30 dark-glow",
@@ -23,7 +23,7 @@ const DemoVideo: React.FC = () => {
         >
           <iframe 
             className="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/XDS4qsb48h0?si=dQWg1aq-K9g5VTL9&amp;autoplay=0&amp;mute=0&amp;controls=1&amp;enablejsapi=1&amp;modestbranding=1&amp;rel=0&amp;hd=1&amp;vq=hd1080&amp;showinfo=0" 
+            src="https://www.youtube.com/embed/XDS4qsb48h0?si=dQWg1aq-K9g5VTL9&autoplay=0&mute=0&controls=1&modestbranding=1&rel=0&playsinline=1" 
             title="Religious Studies GPT Demo" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             allowFullScreen

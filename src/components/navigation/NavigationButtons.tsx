@@ -45,7 +45,7 @@ const NavigationButtons: React.FC<NavigationButtonsProps> = ({ handleHomeClick }
         )}
       >
         <a 
-          href="https://www.aiwebtools.ai"
+          href="https://aiwebtools.lovable.app/?via=aiwebtools"
           target="_blank"
           rel="noopener noreferrer"
           title="Access more AI tools"
